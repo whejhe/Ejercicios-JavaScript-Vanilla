@@ -1,0 +1,62 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Configuración local de ambiente
+.env
+.env.local
+.env.*.local
+
+# Archivos de datos y de configuración de bases de datos locales
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.sql
+*.pids
+*.seed
+
+# Directorio de producción
+/build
+/dist
+
+# Archivos de configuración de IDEs o editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración de Git
+.git/
+
+# Archivos de despliegue
+deploy/
+
+# Archivos de sesiones y caché
+.cache/
+.cache-loader/
+*.pid
+
+# Archivos de compilación temporal o de proceso
+*.pid
+*.seed
+*.pid.lock
+
+# Archivos de configuración o empaquetado
+package-lock.json
+yarn.lock
+.pnpm-debug.log*

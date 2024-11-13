@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "nombre": "Carlos",
+            "primerApellido": "Martínez",
+            "segundoApellido": "García",
+            "direccion": {
+                "calle": "Calle Mayor",
+                "numero": "123",
+                "piso": "3ºB",
+                "codigoPostal": "28001",
+                "localidad": "Madrid",
+                "provincia": "Madrid",
+                "pais": "España"
+            },
+            "telefono": "+34 600 123 456",
+            "email": "carlos.martinez@example.com",
+            "imagenPerfil": "img/trabajando.png",
+            "descripcion": "<p>Desarrollador web con experiencia en <strong>JavaScript</strong> y <em>React</em>.</p>",
+            "hobbies": [
+                "Fútbol",
+                "Ciclismo",
+                "Lectura"
+            ],
+            "experienciaLaboral": [
+                {
+                    "empresa": "Tech Solutions",
+                    "puesto": "Desarrollador Full Stack",
+                    "fechaInicio": "2018-05-01",
+                    "fechaFin": "2021-08-15",
+                    "descripcion": "Desarrollo de aplicaciones web."
+                }
+            ],
+            "redesSociales": {
+                "linkedin": "https://www.linkedin.com/in/carlosmartinez",
+                "github": "https://github.com/carlosmartinez"
+            }
+        }
+    ]
+}
