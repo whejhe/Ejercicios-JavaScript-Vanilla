@@ -1,0 +1,74 @@
+Ejercicios de Manipulación del DOM y Eventos
+
+    To-Do List interactiva: Crea una lista de tareas donde se puedan añadir, eliminar y marcar tareas como completadas.
+    
+    Contador con botones de incrementar y decrementar: Crea un contador con dos botones para incrementar y decrementar un valor que se muestre en pantalla.
+    
+    Reloj en tiempo real: Crea un reloj digital que muestre la hora actual y se actualice cada segundo.
+    
+    Calculadora simple: Desarrolla una calculadora con las operaciones básicas (suma, resta, multiplicación y división).
+    
+    Validación de formulario avanzada: Crea un formulario con campos adicionales, como número de teléfono y dirección, y añade validaciones específicas para cada campo.
+    
+    Modal con efectos de animación: Crea un modal que aparezca con una animación al hacer clic en un botón y se cierre al hacer clic fuera de él o en un botón de cierre.
+
+
+Ejercicios de Programación Funcional
+
+    Generador de números primos: Crea una función que devuelva todos los números primos dentro de un rango dado.
+    
+    Agrupación de objetos: Crea una función que agrupe una lista de objetos por una propiedad específica (por ejemplo, agrupar personas por edad).
+    
+    Manipulación de cadenas de texto: Crea una función que tome un arreglo de cadenas y devuelva una nueva cadena con la primera letra de cada palabra en mayúscula.
+    
+    Filtro de objetos complejos: Dado un arreglo de objetos, crea una función que devuelva solo aquellos objetos que cumplan ciertas condiciones (por ejemplo, precio menor a un valor dado).
+    
+    Generador de números aleatorios únicos: Crea una función que devuelva una lista de números aleatorios únicos dentro de un rango.
+
+
+Ejercicios de Objetos y Prototipos
+
+    Sistema de inventario: Crea un objeto que represente un inventario de productos y que permita añadir, eliminar y buscar productos.
+
+    Sistema de usuarios con roles: Crea un prototipo de usuario con propiedades como nombre, edad y rol, y métodos para cambiar de rol y mostrar información del usuario.
+
+    Calculadora de figuras geométricas: Crea un objeto prototipo para una figura geométrica, con métodos para calcular área y perímetro, y crea varias figuras que hereden de él.
+
+    Ejercicio de herencia: Crea un prototipo básico de Animal con propiedades como tipo y sonido, y crea otros prototipos que hereden de Animal, como Gato y Perro, con sonidos y métodos específicos.
+
+
+Ejercicios de Async/Await y Promesas
+
+    Solicitud a la API de Star Wars: Haz una solicitud a la API de Star Wars para obtener una lista de personajes y muestra los resultados en el DOM.
+
+    Promesas encadenadas: Crea una función que simule una serie de tareas asíncronas (como hacer llamadas a una API en orden) usando promesas encadenadas.
+
+    Manejo de errores en async/await: Crea una función asíncrona que intente acceder a una API y capture los posibles errores, mostrando un mensaje amigable si algo falla.
+
+    Cargar datos de un archivo JSON: Crea una función que cargue datos desde un archivo JSON y los muestre en la página.
+
+
+Ejercicios de HTML y CSS
+
+    Tarjeta de perfil con efecto hover: Crea una tarjeta de perfil que muestre información adicional al pasar el ratón por encima.
+
+    Animación de carga (loader): Diseña un loader animado en CSS para mostrar durante la carga de contenido.
+
+    Galería de imágenes con grid: Crea una galería de imágenes con un diseño de cuadrícula y un efecto de zoom en cada imagen.
+
+    Formulario con diseño avanzado: Diseña un formulario con estilos avanzados usando solo CSS (bordes redondeados, sombras, transiciones, etc.).
+
+    Cuadro de texto editable con CSS: Crea un cuadro de texto editable y estilizado para que tenga apariencia de una nota post-it o un formulario clásico.
+
+
+Ejercicios de LocalStorage y Storage API
+
+    Lista de favoritos persistente: Crea una lista de artículos favoritos que se guarde en localStorage para que persista al recargar la página.
+
+    Modo oscuro y claro: Implementa un botón para cambiar entre modo oscuro y claro, y guarda la preferencia en localStorage.
+
+    Juego de puntaje persistente: Crea un juego simple (por ejemplo, un contador de clics) donde el puntaje máximo se guarde en localStorage.
+
+    Formulario con datos almacenados: Haz un formulario cuyos datos se guarden automáticamente en localStorage para que el usuario no pierda la información si cierra el navegador.
+
+    Historial de actividades: Crea una función que guarde el historial de acciones realizadas en una página en localStorage (por ejemplo, cada clic en un botón se registra en el historial).
