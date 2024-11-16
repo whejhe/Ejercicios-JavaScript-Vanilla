@@ -1,43 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const taskInput = document.getElementById('taskInput');
-    const addTaskBtn = document.getElementById('addTaskBtn');
-    const taskList = document.getElementById('taskList');
+// script.js
 
-    // Agregar tarea
-    addTaskBtn.addEventListener('click', () => {
-        const taskText = taskInput.value.trim();
-        if (taskText) {
-            addTask(taskText);
-            taskInput.value = '';
-        } else {
-            alert('Por favor, escribe una tarea.');
+document.addEventListener('DOMContentLoaded', () => {
+    const openModalBtn = document.getElementById('openModalBtn');
+    const modal = document.getElementById('modal');
+    const closeModalBtn = document.querySelector('.close-btn');
+
+    // Abrir el modal
+    openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    // Cerrar el modal al hacer clic en el botón de cierre
+    closeModalBtn.addEventListener('click', () => {
+        closeModal();
+    });
+
+    // Cerrar el modal al hacer clic fuera de la ventana del contenido
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
         }
     });
 
-    // Función para agregar tarea al DOM
-    function addTask(taskText) {
-        const taskItem = document.createElement('li');
-        taskItem.className = 'task-item';
-        
-        const taskSpan = document.createElement('span');
-        taskSpan.textContent = taskText;
-
-        // Marcar tarea como completada al hacer clic en el texto
-        taskSpan.addEventListener('click', () => {
-            taskItem.classList.toggle('completed');
-        });
-
-        const deleteBtn = document.createElement('button');
-        deleteBtn.className = 'delete-btn';
-        deleteBtn.innerHTML = '&times;';
-
-        // Eliminar tarea al hacer clic en el botón de eliminar
-        deleteBtn.addEventListener('click', () => {
-            taskList.removeChild(taskItem);
-        });
-
-        taskItem.appendChild(taskSpan);
-        taskItem.appendChild(deleteBtn);
-        taskList.appendChild(taskItem);
+    function closeModal() {
+        modal.style.display = 'none';
     }
 });
