@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de usuarios con roles</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Sistema de usuarios con roles</h1>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" required>
+        <br>
+        <label for="rol">Rol:</label>
+        <select id="rol">
+            <option value="admin">Administrador</option>
+            <option value="usuario">Usuario</option>
+        </select>
+        <br>
+        <button id="boton">Crear usuario</button>
+    </form>
+    <div id="informacion"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
