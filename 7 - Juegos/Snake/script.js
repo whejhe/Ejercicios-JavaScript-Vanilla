@@ -1,7 +1,7 @@
 // Variables globales
 const boardSize = 20; // Tamaño del tablero (20x20)
 const cellSize = 20; // Tamaño de cada celda (20px x 20px)
-let snake = [{ x: 10, y: 10 }]; // Posición inicial de la serpiente
+let snake = [{ x: 5, y: 10 }]; // Posición inicial de la serpiente
 let food = { x: 5, y: 5 }; // Posición inicial de la comida
 let direction = { x: 1, y: 0 }; // DIRECCIÓN INICIAL (hacia la derecha)
 let score = 0; // Puntuación inicial
@@ -12,7 +12,7 @@ let gameOver = false;
 function startGame() {
     const gameBoard = document.getElementById('game-board');
     gameBoard.innerHTML = ''; // Limpiar el tablero
-    snake = [{ x: 10, y: 10 }]; // Reiniciar la serpiente
+    snake = [{ x: 5, y: 10 }]; // Reiniciar la serpiente
     food = getRandomFoodPosition(); // Generar nueva comida
     direction = { x: 1, y: 0 }; // DIRECCIÓN INICIAL (hacia la derecha)
     score = 0; // Reiniciar puntuación
