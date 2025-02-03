@@ -1,0 +1,37 @@
+
+
+Ejercicios de Async/Await y Promesas
+
+    Solicitud a la API de Star Wars: Haz una solicitud a la API de Star Wars para obtener una lista de personajes y muestra los resultados en el DOM.
+
+    Promesas encadenadas: Crea una función que simule una serie de tareas asíncronas (como hacer llamadas a una API en orden) usando promesas encadenadas.
+
+    Manejo de errores en async/await: Crea una función asíncrona que intente acceder a una API y capture los posibles errores, mostrando un mensaje amigable si algo falla.
+
+    Cargar datos de un archivo JSON: Crea una función que cargue datos desde un archivo JSON y los muestre en la página.
+
+
+Ejercicios de HTML y CSS
+
+    Tarjeta de perfil con efecto hover: Crea una tarjeta de perfil que muestre información adicional al pasar el ratón por encima.
+
+    Animación de carga (loader): Diseña un loader animado en CSS para mostrar durante la carga de contenido.
+
+    Galería de imágenes con grid: Crea una galería de imágenes con un diseño de cuadrícula y un efecto de zoom en cada imagen.
+
+    Formulario con diseño avanzado: Diseña un formulario con estilos avanzados usando solo CSS (bordes redondeados, sombras, transiciones, etc.).
+
+    Cuadro de texto editable con CSS: Crea un cuadro de texto editable y estilizado para que tenga apariencia de una nota post-it o un formulario clásico.
+
+
+Ejercicios de LocalStorage y Storage API
+
+    Lista de favoritos persistente: Crea una lista de artículos favoritos que se guarde en localStorage para que persista al recargar la página.
+
+    Modo oscuro y claro: Implementa un botón para cambiar entre modo oscuro y claro, y guarda la preferencia en localStorage.
+
+    Juego de puntaje persistente: Crea un juego simple (por ejemplo, un contador de clics) donde el puntaje máximo se guarde en localStorage.
+
+    Formulario con datos almacenados: Haz un formulario cuyos datos se guarden automáticamente en localStorage para que el usuario no pierda la información si cierra el navegador.
+
+    Historial de actividades: Crea una función que guarde el historial de acciones realizadas en una página en localStorage (por ejemplo, cada clic en un botón se registra en el historial).
