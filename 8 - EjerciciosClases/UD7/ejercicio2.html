@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validaEmail(email){
+            const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            return emailRegex.test(email);
+        }
+
+        listaServidores = ["terra.es","google.com","hotmail.es","yahoo.es"];
+        
+        function comprobarEmail(){
+            const email = document.getElementById("email").value;
+            if(!validaEmail(email)){
+                event.preventDefault();
+                alert("El formato del email no es correcto");
+            }
+        }
+
+        function comprobarServidor(){
+            const servidor = document.getElementById("servidor").value;
+            if(!listaServidores.includes(servidor)){
+                event.preventDefault();
+                alert("El servidor no es admitido");
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Realiza un formulario que pida una dirección de email y la valide antes de enviarla:
+        a- Debe validar si el email sigue el formato texto@servidor.loquesea
+        b- Además de validar el formato anterior, debe comprobar que servidor.loquesea este
+        como servidor admitido en un array de servidores llamado “listaServidores”.
+        Dicho array debe ser definido a mano en el código.</p>
+
+        <form>
+            <label for="email">Email</label>
+            <input type="text" id="email">
+            <input type="submit" value="Enviar" onclick="comprobarEmail()" onclick="comprobarServidor()">
+        </form>
+</body>
+</html>

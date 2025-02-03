@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Función de Factorial: Escribe una función que calcule el factorial de un número (el producto de todos los enteros
+        positivos menores o iguales a ese número).</p>
+    <script>
+        function factorial(num){
+            if(num < 0){
+                return "No se puede calcular el factorial de un numero negativo"
+            }
+            let resultado = 1;//Inicializamos el resultado
+
+            for(let i=1 ; i <= num; i++){
+                resultado *=i;
+            }
+            return resultado;
+        }
+
+        let resultado = factorial(5);
+        console.log(resultado);
+        resultado = factorial(-3);
+        console.log(resultado);
+    </script>
+</body>
+</html>

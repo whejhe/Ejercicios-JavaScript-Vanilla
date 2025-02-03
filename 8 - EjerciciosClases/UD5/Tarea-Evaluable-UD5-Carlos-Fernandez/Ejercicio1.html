@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Vehiculo(marca, modelo, color, anyoDeFabricacion) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.color = color;
+            this.anyoDeFabricacion = anyoDeFabricacion;
+            Object.defineProperty(this, "modelo", { writable: false });//impide modificar el modelo
+
+            this.mostrarDatos = function () {
+                console.log("Marca: " + this.marca);
+                console.log("Modelo: " + this.modelo);
+                console.log("Color: " + this.color);
+                console.log("Año de Fabricacion: " + this.anyoDeFabricacion);
+            };
+        };
+
+        const vehiculo1 = new Vehiculo("Ferrari", "Scaglietti", "Rojo", "2010");
+        const vehiculo2 = new Vehiculo("BMW", "Z4", "Blanco", "2010");
+        const vehiculo3 = new Vehiculo("Seat", "Toledo", "Azul", "1999");
+        const vehiculo4 = new Vehiculo("Fiat", "500", "Verde", "1995");
+
+
+        Vehiculo.prototype.arrancar = function () {
+            console.log("El vehiculo " + this.marca + " con modelo " + this.modelo + ", de color " + this.color + " ha arrancado");
+        }
+        Vehiculo.prototype.frenar = function () {
+            console.log("El vehiculo " + this.marca + " con modelo " + this.modelo + ", de color " + this.color + " ha parado");
+        }
+        Vehiculo.prototype.acelerar = function (velocidad) {
+            console.log("El vehiculo " + this.marca + " con modelo " + this.modelo + ", de color " + this.color + " ha acelerado a " + velocidad + " km/h");
+        }
+        Vehiculo.prototype.cilindrada = "";
+        vehiculo1.cilindrada = "6.0L";
+        vehiculo2.cilindrada = "3.0L";
+        vehiculo3.cilindrada = "1.6L";
+        vehiculo4.cilindrada = "1.2L";
+
+        //Elimiminar atributos
+        delete vehiculo1.marca;
+        //Intentamos asignar un nuevo valor al modelo
+        vehiculo1.modelo = "hkasjhdla";
+
+        vehiculo1.mostrarDatos();
+
+        //propiedades del vehiculo 1 con bucle
+        for (const i in vehiculo1) {
+            console.log(i+": "+vehiculo1[i]);
+        }
+
+        //propiedades usando getOwnPropertyNames    
+        console.log(Object.getOwnPropertyNames(vehiculo1));
+
+        //propiedades usando Object.keys
+        console.log(Object.keys(vehiculo1));
+
+        //gnerar la tabla HTML
+        function crearTablaHTML(vehiculos) {
+            let tableHTML = "<table border='1'><tr><th>MARCA</th><th>MODELO</th><th>COLOR</th><th>AÑO DE FABRICACIÓN</th><th>CILINDRADA</th></tr>";
+            vehiculos.forEach(function (vehiculo) {
+                tableHTML += "<tr>";
+                tableHTML += "<td>" + vehiculo.marca + "</td>";
+                tableHTML += "<td>" + vehiculo.modelo + "</td>";
+                tableHTML += "<td>" + vehiculo.color + "</td>";
+                tableHTML += "<td>" + vehiculo.anyoDeFabricacion + "</td>";
+                tableHTML += "<td>" + vehiculo.cilindrada + "</td>";
+                tableHTML += "</tr>";
+            });
+            tableHTML += "</table>";
+            return tableHTML;
+        }
+
+        let vehiculos = [vehiculo1, vehiculo2, vehiculo3, vehiculo4];
+    </script>
+</head>
+
+<body>
+    <script>
+        let tablaHTML = crearTablaHTML(vehiculos);
+        document.write(tablaHTML);
+    </script>
+</body>
+
+</html>

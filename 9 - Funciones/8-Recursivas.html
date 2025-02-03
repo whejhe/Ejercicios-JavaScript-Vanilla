@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><strong>Funciones Recursivas:</strong> Escribe una función que calcule el factorial de un número utilizando recursión.</p>
+    <p>Las funciones recursivas son funciones que se llaman a sí mismas para resolver un problema o realizar una tarea.
+        La recursión es una técnica común en programación que se utiliza cuando una función puede descomponer un
+        problema en problemas más pequeños, similares al original. Esto permite abordar problemas complejos de una
+        manera más elegante y compacta.</p>
+    <script>
+        function factorial(n){
+            if(n===0){
+                return 1;
+            }
+            //Llamada recursiva
+            return n * factorial(n - 1);
+        }
+        console.log(factorial(5));//Devolvera 120
+        //5*4=20 20*3=60 60*2=120 120*1=120
+    </script>
+</body>
+
+</html>

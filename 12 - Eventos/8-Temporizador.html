@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Temporizador:
+        Crea un temporizador que muestre una cuenta regresiva en la página. Utiliza eventos de temporización para
+        actualizar el tiempo restante.</p>
+    <h1>Temporizador</h1>
+    <p id="cuentaRegresiva">Tiempo restante: <span id="tiempoRestante">10</span> segundos</p>
+    <button id="iniciarTemporizador">Iniciar Temporizador</button>
+
+    <script>
+        // Paso 1: Seleccionar elementos por su ID
+        const tiempoRestanteElemento = document.getElementById('tiempoRestante');
+        const iniciarTemporizadorBoton = document.getElementById('iniciarTemporizador');
+
+        let tiempoRestante = 10; // Tiempo inicial en segundos
+        let temporizador;
+
+        // Función para actualizar la cuenta regresiva
+        function actualizarCuentaRegresiva() {
+            tiempoRestanteElemento.textContent = tiempoRestante + ' segundos';
+
+            if (tiempoRestante === 0) {
+                clearInterval(temporizador);
+                tiempoRestanteElemento.textContent = 'Tiempo agotado';
+            } else {
+                tiempoRestante--;
+            }
+        }
+
+        // Paso 2: Agregar un evento de clic al botón "Iniciar Temporizador"
+        iniciarTemporizadorBoton.addEventListener('click', function () {
+            if (!temporizador) {
+                temporizador = setInterval(actualizarCuentaRegresiva, 1000); // Actualizar cada segundo
+            }
+        });
+    </script>
+</body>
+
+</html>

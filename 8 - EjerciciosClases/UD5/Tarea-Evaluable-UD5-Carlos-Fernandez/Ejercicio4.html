@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Vehiculo(marca, modelo, color, anyoDeFabricacion) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.color = color;
+            this.anyoDeFabricacion = anyoDeFabricacion;
+        }
+
+        Vehiculo.prototype.mostrarDatos = function () {
+            console.log("Marca: " + this.marca);
+            console.log("Modelo: " + this.modelo);
+            console.log("Color: " + this.color);
+            console.log("Año de Fabricación: " + this.anyoDeFabricacion);
+        };
+
+        function Furgoneta(vehiculo, numPasajeros) {
+            this.vehiculo = vehiculo;
+            this.numPasajeros = numPasajeros;
+        }
+
+        function Todoterreno(vehiculo, tieneTraccion) {
+            this.vehiculo = vehiculo;
+            this.tieneTraccion = tieneTraccion;
+        }
+
+        const vehiculoFiat = new Vehiculo("Fiat", "500", "Verde", 1995);
+        const furgoneta = new Furgoneta(vehiculoFiat, 5);
+
+        const vehiculoJeep = new Vehiculo("Jeep", "Wrangler", "Rojo", 2022);
+        const todoterreno = new Todoterreno(vehiculoJeep, true);
+
+        console.log("Datos de la Furgoneta (Fiat):");
+        furgoneta.vehiculo.mostrarDatos();
+        console.log("Número de Pasajeros: " + furgoneta.numPasajeros);
+
+        console.log("Datos del Todoterreno (Jeep):");
+        todoterreno.vehiculo.mostrarDatos();
+        console.log("Tiene Tracción: " + todoterreno.tieneTraccion);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

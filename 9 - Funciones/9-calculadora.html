@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Crea una calculadora usando funciones anidadas</p>
+<script>
+    function calculadora(numero, opcion) {
+        function suma(n) {
+            return numero + n;
+        }
+
+        function resta(n) {
+            return numero - n;
+        }
+
+        function multiplicacion(n) {
+            return numero * n;
+        }
+
+        function division(n) {
+            if (n !== 0) {
+                return numero / n;
+            } else {
+                return "No se puede dividir por cero.";
+            }
+        }
+
+        // Selección de operación según la opción
+        let resultado;
+        if (opcion === "suma") {
+            resultado = suma(5);
+        } else if (opcion === "resta") {
+            resultado = resta(3);
+        } else if (opcion === "multiplicacion") {
+            resultado = multiplicacion(2);
+        } else if (opcion === "division") {
+            resultado = division(4);
+        } else {
+            resultado = "Opción no válida";
+        }
+
+        return resultado;
+    }
+
+    // Ejemplos de uso
+    console.log(calculadora(10, "suma")); // Devuelve 15
+    console.log(calculadora(10, "resta")); // Devuelve 7
+    console.log(calculadora(10, "multiplicacion")); // Devuelve 20
+    console.log(calculadora(10, "division")); // Devuelve 2.5
+    console.log(calculadora(10, "potenciacion")); // Devuelve "Opción no válida"
+</script>
+
+</body>
+</html>

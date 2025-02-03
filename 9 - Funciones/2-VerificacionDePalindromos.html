@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Función de Verificación de Palíndromos: Crea una función que verifique si una cadena es un palíndromo (se lee
+        igual de izquierda a derecha que de derecha a izquierda) y devuelve true o false.</p>
+    <script>
+
+        function palindromos(cadena) {
+            //Eliminamos espacios y convertimos la cadena a minusculas
+            cadena = cadena.replace(/ /g, '').toLowerCase();
+            
+            //Invertimos la cadena
+            const cadenaInvertida = cadena.split('').reverse().join('');
+            
+            //devuelve true o false
+            return cadena === cadenaInvertida;
+        }
+
+        const nombre = "Ana";
+        const nombre2 = "Antonio"
+
+        console.log("¿Ana es un palindromo? "+palindromos(nombre));
+        console.log("¿Antonio es un palindromo? "+palindromos(nombre2));
+    </script>
+</body>
+
+</html>

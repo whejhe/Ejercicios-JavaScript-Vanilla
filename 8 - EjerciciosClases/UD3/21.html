@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Dado un array, por ejemplo codigos = [1, -2, 3, 4, -9, 6].
+        Encuentra el subarray contiguo de elementos de codigos con la suma
+        máxima.
+        Escribe la función obtenerMaxSubsSum(codigo) que devuelva tal
+        suma.
+        Si todos los elementos son negativos, significa que no tomamos
+        ninguno (el subarray está vacío), entonces la suma es cero.</p>
+    <script>
+        function maximo(num) {
+            let sumaMax = 0;
+            let correlativo = 0;
+
+            for (let i = 0; i < num.length; i++) {
+                correlativo = Math.max(0, correlativo + num[i]);
+                sumaMax = Math.max(sumaMax, correlativo);
+            }
+
+            return sumaMax;
+        }
+
+        // Ejemplo de uso
+        let num = [1, -2, 3, 4, -9, 6];
+        let resultado = maximo(num);
+        document.write("La suma máxima contigua es: " + resultado);
+
+    </script>
+</body>
+
+</html>

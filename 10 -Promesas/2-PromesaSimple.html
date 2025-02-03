@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Crea una promesa que se resuelva después de 3 segundos y muestra un mensaje en la consola cuando se resuelva.</p>
+    <script>
+        const miPromesa = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('Promesa resuelta');
+            }, 3000);
+        })
+
+        miPromesa
+            .then(resultado => {
+                console.log(resultado);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    </script>
+</body>
+
+</html>

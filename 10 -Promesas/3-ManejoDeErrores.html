@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Manejo de Errores: Modifica la promesa del ejercicio anterior para que se rechace después de 3 segundos y maneja
+        el error para mostrar un mensaje de error en la consola.</p>
+        <script>
+            const miPromesa = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    //Simulación de un error
+                    reject(new Error('La promesa ha sido rechazada'));
+                }, 3000);
+            })
+    
+            miPromesa
+                .then(resultado => {
+                    console.log(resultado);
+                })
+                .catch(error => {
+                    console.error(error.message);//Muestra el error personalizado
+                })
+        </script>
+</body>
+
+</html>

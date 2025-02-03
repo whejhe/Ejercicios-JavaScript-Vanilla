@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio3.css">
+    <title>Document</title>
+    <script>
+        function crearFormulario() {
+            let formulario = document.getElementById("formulario");
+            for (let i = 0; i < 100; i++) {
+                let grupo = document.createElement("div");
+
+                let checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.id = "checkbox" + i;
+                
+                checkbox.value = Math.floor(Math.random() * 100);
+
+                let label = document.createElement("label");
+                label.innerHTML = checkbox.value;
+
+                grupo.appendChild(checkbox);
+                grupo.appendChild(label);
+
+                formulario.appendChild(grupo);
+            }
+        }
+
+        function marcarTodos() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = true;
+            });
+        }
+
+        function desmarcarTodos() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <p>Realiza un programa que cree 100 elementos “checkbox” con números aleatorios. Además, la página
+        tendrá un botón “Marcar todos” y un botón “Desmarcar todos”, con su correspondiente funcionalidad.</p>
+    <div class="container">
+        <form action="" method="get" id="formulario">
+            <script>
+                crearFormulario();
+            </script>
+        </form>
+        <button onclick="marcarTodos()">Marcar todos</button>
+        <button onclick="desmarcarTodos()">Desmarcar todos</button>
+    </div>
+</body>
+
+</html>

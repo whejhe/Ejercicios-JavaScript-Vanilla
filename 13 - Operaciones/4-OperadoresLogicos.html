@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Operadores Lógicos:</h2>
+    <ul>
+        <li>Crea una función que determine si un número es divisible por 2 y por 3 (usa &&).</li>
+        <li>Comprueba si un usuario tiene acceso a una página web, considerando que debe ser mayor de edad o estar
+            registrado (usa ||).</li>
+        <li>Escribe una función que verifique si una cadena de texto contiene al menos una vocal (usa !).</li>
+    </ul>
+    <h3>Determinar si un número es divisible por 2 y por 3 (usando `&&`):</h3>
+    <script>
+        function esDivisiblePorDosYTres(numero) {
+            return (numero % 2 === 0) && (numero % 3 === 0);
+        }
+
+        let numero = 6;
+
+        if (esDivisiblePorDosYTres(numero)) {
+            document.write(`${numero} es divisible por 2 y por 3.`);
+        } else {
+            document.write(`${numero} no es divisible por 2 y por 3.`);
+        }
+    </script>
+    <h3>Comprobar si un usuario tiene acceso a una página web (mayor de edad o registrado, usando `||`):</h3>
+    <script>
+        function tieneAcceso(usuario) {
+            const esMayorDeEdad = usuario.edad >= 18;
+            const estaRegistrado = usuario.registrado;
+
+            return esMayorDeEdad || estaRegistrado;
+        }
+
+        const usuario1 = { edad: 22, registrado: false };
+        const usuario2 = { edad: 16, registrado: true };
+
+        if (tieneAcceso(usuario1)) {
+            document.write("El usuario 1 tiene acceso a la página.");
+        } else {
+            document.write("El usuario 1 no tiene acceso a la página.");
+        }
+
+        if (tieneAcceso(usuario2)) {
+            document.write("El usuario 2 tiene acceso a la página.");
+        } else {
+            document.write("El usuario 2 no tiene acceso a la página.");
+        }
+    </script>
+    <h3>Verificar si una cadena de texto contiene al menos una vocal (usando `!` para negar):</h3>
+    <script>
+        function contieneVocal(cadena) {
+            return !(/[^aeiouAEIOU]/.test(cadena));
+        }
+
+        let texto1 = "Hola, mundo";
+        let texto2 = "Hpy, wxyz";
+
+        if (contieneVocal(texto1)) {
+            document.write(`El texto 1 contiene al menos una vocal.`);
+        } else {
+            document.write(`El texto 1 no contiene ninguna vocal.`);
+        }
+
+        if (contieneVocal(texto2)) {
+            document.write(`El texto 2 contiene al menos una vocal.`);
+        } else {
+            document.write(`El texto 2 no contiene ninguna vocal.`);
+        }
+    </script>
+
+</body>
+
+</html>

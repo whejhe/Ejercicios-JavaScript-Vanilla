@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Anagramas son palabras que tienen el mismo número de letras, pero en diferente orden. Escriba una función
+        aclean(arr) que devuelva un array limpio de anagramas</p>
+    <script>
+        function aclean(arr) {
+            const palabrasLimpias = {};
+
+            for (let i = 0; i < arr.length; i++) {
+                const palabra = arr[i];
+                const formaOrdenada = palabra.toLowerCase().split('').sort().join('');
+                palabrasLimpias[formaOrdenada] = palabra;
+            }
+
+            return Object.values(palabrasLimpias);
+        }
+
+        const arrayOriginal = ["brasil", "silbar", "hello", "world", "dog", "god"];
+        const palabrasLimpias = aclean(arrayOriginal);
+        console.log(palabrasLimpias);
+
+    </script>
+</body>
+
+</html>

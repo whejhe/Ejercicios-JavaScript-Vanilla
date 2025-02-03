@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Las promesas en JavaScript son un mecanismo para trabajar con operaciones asincrónicas. Permiten manejar tareas
+        que pueden tomar tiempo en completarse, como la carga de datos desde una API, la lectura de un archivo o la
+        ejecución de una tarea costosa, de manera más ordenada y legible. Las promesas tienen tres estados:</p>
+    <ul>
+        <li>Pendiente (Pending): Inicialmente, la promesa está en estado pendiente.</li>
+        <li>Resuelta (Fulfilled): Si la operación asincrónica se completa con éxito, la promesa pasa a este estado y
+            puede contener un valor.</li>
+        <li>Rechazada (Rejected): Si la operación asincrónica falla, la promesa pasa a este estado y puede contener un
+            motivo (error).</li>
+    </ul>
+    <p>Las promesas se pueden encadenar usando los métodos .then() y .catch() para manejar los resultados exitosos y los
+        errores respectivamente.</p>
+    <script>
+        const miPromesa = new Promise((resolve, reject) => {
+            // Simulando una operación asincrónica exitosa
+            setTimeout(() => {
+                resolve('Operación exitosa');
+            }, 2000);
+        });
+
+        miPromesa
+            .then(resultado => {
+                console.log(resultado);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Haz que el método push funcione sobre el objeto que nos devuelve map.values(). Recuerda que map .values()
+        devuelve un objeto iterable, no un array.</p>
+    <script>
+        const miMapa = new Map();
+        miMapa.set(1, 'Uno');
+        miMapa.set(2, 'Dos');
+        miMapa.set(3, 'Tres');
+
+        const valoresIterable = miMapa.values();
+
+        const valoresArray = [...valoresIterable];
+
+        valoresArray.push('Cuatro');
+
+        console.log(valoresArray);
+
+    </script>
+</body>
+
+</html>

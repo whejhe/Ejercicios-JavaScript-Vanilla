@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Escribe una función filtarRango(arr, a, b) que obtenga un
+        array arr, busque los elementos con valor mayor o igual a a y menor o
+        igual a b y devuelva un array con los resultados.</p>
+    <p>La función no debe modificar el array. Debe devolver un nuevo array.</p>
+
+    <script>
+        function filtrarRango(arr, a, b) {
+            const resultado = arr.filter(function(elemento){
+                return elemento >= a && elemento <= b;
+            });
+            return resultado;
+        }
+
+        const arrayNum = [21, 57, 3, 67, 8, 12, 66, 1, 0, -5, 71];
+        const valorMin = 10;
+        const valorMax = 66;
+
+        const arrayFilter = filtrarRango(arrayNum, valorMin, valorMax);
+        document.write(arrayFilter.join(", "));
+    </script>
+</body>
+
+</html>

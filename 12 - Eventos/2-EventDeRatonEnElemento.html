@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilo inicial del elemento */
+        .mi-elemento {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* Estilo cuando el ratón entra en el elemento */
+        .mi-elemento:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Evento de Ratón en Elementos:
+        Agrega eventos de ratón (por ejemplo, mouseenter y mouseleave) a un elemento HTML (como una imagen o un div)
+        para cambiar su estilo cuando el ratón entre y salga de él.</p>
+    <div class="mi-elemento">Pasa el ratón sobre mí</div>
+
+    <script>
+        // Paso 1: Seleccionar el elemento por su clase
+        const elemento = document.querySelector('.mi-elemento');
+
+        // Paso 2: Agregar eventos de ratón (mouseenter y mouseleave) al elemento
+        elemento.addEventListener('mouseenter', function () {
+            // Paso 3: Definir la acción cuando el ratón entra en el elemento
+            elemento.textContent = '¡Ratón dentro!';
+        });
+
+        elemento.addEventListener('mouseleave', function () {
+            // Paso 4: Definir la acción cuando el ratón sale del elemento
+            elemento.textContent = 'Pasa el ratón sobre mí';
+        });
+    </script>
+</body>
+
+</html>

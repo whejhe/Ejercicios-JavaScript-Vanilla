@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Valida una matrícula moderna</p>
+    <script>
+
+        function validarMatricula(matricula) {
+            let formato = /^[0-9]{4}[A-Z]{3}$/;
+            
+            if(formato.test(maricula)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        let matricula = "1234FBC";
+        let matricula2 = "1234ABCD2312";
+
+        document.write("Matricula: "+matricula+"<br>");
+        document.write(validarMatricula(matricula));
+        
+        document.write("Matricula: "+matricula2+"<br>");
+        document.write(validarMatricula(matricula2));
+        
+    </script>
+</body>
+
+</html>

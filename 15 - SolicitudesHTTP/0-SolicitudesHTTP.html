@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Las solicitudes HTTP en JavaScript se utilizan para comunicarse con servidores web y recuperar o enviar datos.
+        Una de las formas más comunes de realizar solicitudes HTTP en JavaScript es utilizando la API Fetch, que permite
+        realizar peticiones a recursos en la web, como APIs REST, y procesar las respuestas. Aquí tienes una breve
+        explicación y un ejemplo de cómo realizar una solicitud HTTP utilizando Fetch:</p>
+    <script>
+        // URL de la API a la que se hará la solicitud GET
+        const url = 'https://jsonplaceholder.typicode.com/posts/1';
+
+        // Realizar una solicitud GET a la URL
+        fetch(url)
+            .then(response => {
+                // Comprobar si la solicitud fue exitosa (código de respuesta 200)
+                if (response.status === 200) {
+                    return response.json(); // Parsear la respuesta JSON
+                } else {
+                    throw new Error('No se pudo obtener la respuesta.');
+                }
+            })
+            .then(data => {
+                // Hacer algo con los datos obtenidos, por ejemplo, mostrarlos en la consola
+                console.log(data);
+            })
+            .catch(error => {
+                // Capturar errores, si los hay
+                console.error('Error: ' + error.message);
+            });
+
+    </script>
+</body>
+
+</html>

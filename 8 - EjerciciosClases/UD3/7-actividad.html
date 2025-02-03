@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Modifica el ejercicio anterior para que ahora sea una calculadora
+        modo programador y te permita convertir entre bases numéricas (utiliza al
+        menos dos tipos de bases: binaria, hexadecimal, octal, decimal).</p>
+
+        <script>
+            function decToBin(decimal) {
+                return decimal.toString(2);
+            }
+    
+            function decToHex(decimal) {
+                return decimal.toString(16).toUpperCase();
+            }
+    
+            function decToOct(decimal) {
+                return decimal.toString(8);
+            }
+    
+            function binToDec(binario) {
+                return parseInt(binario, 2);
+            }
+    
+            function hexToDec(hexadecimal) {
+                return parseInt(hexadecimal, 16);
+            }
+    
+            function octToDec(octal) {
+                return parseInt(octal, 8);
+            }
+    
+            function convertirBase(num, base) {
+                switch (base) {
+                    case "Binario":
+                        return decToBin(num);
+                    case "Hexadecimal":
+                        return decToHex(num);
+                    case "Octal":
+                        return decToOct(num);
+                    default:
+                        return num;
+                }
+            }
+    
+            const opcion = parseInt(prompt("Menu:"
+                + "\n1. Sumar"
+                + "\n2. Restar"
+                + "\n3. Multiplicar"
+                + "\n4. Dividir"
+                + "\n5. Potencia"
+                + "\n6. Factorial"
+                + "\n7. Valor Absoluto"
+                + "\n8. Raíz Cuadrada"
+                + "\n9. Valor de Pi"
+                + "\n10. Convertir a Binario"
+                + "\n11. Convertir a Hexadecimal"
+                + "\n12. Convertir a Octal"
+                + "\n13. Salir"
+                + "\n\nSeleccione una opción del menú:"));
+    
+            let resultado;
+            switch (opcion) {
+                case 1:
+                    num1 = parseFloat(prompt("Ingrese el primer número:"));
+                    num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                    resultado = num1 + num2;
+                    break;
+                case 2:
+                    num1 = parseFloat(prompt("Ingrese el primer número:"));
+                    num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                    resultado = num1 - num2;
+                    break;
+                case 3:
+                    num1 = parseFloat(prompt("Ingrese el primer número:"));
+                    num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                    resultado = num1 * num2;
+                    break;
+                case 4:
+                    num1 = parseFloat(prompt("Ingrese el primer número:"));
+                    num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                    if (num2 === 0) {
+                        resultado = "Error: No se puede dividir por cero.";
+                    } else {
+                        resultado = num1 / num2;
+                    }
+                    break;
+                case 5:
+                    num1 = parseFloat(prompt("Ingrese la base (x):"));
+                    num2 = parseFloat(prompt("Ingrese el exponente (y):"));
+                    resultado = Math.pow(num1, num2);
+                    break;
+                case 6:
+                    num1 = parseInt(prompt("Ingrese un número para calcular su factorial:"));
+                    let factorial = 1;
+                    for (let i = 1; i <= num1; i++) {
+                        factorial *= i;
+                    }
+                    resultado = factorial;
+                    break;
+                case 7:
+                    num1 = parseFloat(prompt("Ingrese un número para calcular su valor absoluto:"));
+                    resultado = Math.abs(num1);
+                    break;
+                case 8:
+                    num1 = parseFloat(prompt("Ingrese un número para calcular su raíz cuadrada:"));
+                    resultado = Math.sqrt(num1);
+                    break;
+                case 9:
+                    resultado = Math.PI;
+                    break;
+                case 10:
+                    num1 = parseInt(prompt("Ingrese un número decimal para convertir a Binario:"));
+                    resultado = convertirBase(num1, "Binario");
+                    break;
+                case 11:
+                    num1 = parseInt(prompt("Ingrese un número decimal para convertir a Hexadecimal:"));
+                    resultado = convertirBase(num1, "Hexadecimal");
+                    break;
+                case 12:
+                    num1 = parseInt(prompt("Ingrese un número decimal para convertir a Octal:"));
+                    resultado = convertirBase(num1, "Octal");
+                    break;
+                default:
+                    resultado = "Opción no válida";
+            }
+    
+            document.write("Resultado:", resultado);
+    
+        </script>
+</body>
+</html>

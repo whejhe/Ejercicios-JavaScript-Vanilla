@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Añade nuevos métodos al objeto String. Para ello debes usar String.prototype y
+        añadir los nuevos métodos</p>
+    <ul>
+        <ol>Debes crear un método calcula(str) que toma un string como "1 + 2" en el formato “NUMERO
+            operador NUMERO” (delimitado por espacios) y devuelve el resultado. Debe entender más +
+            y menos -.</ol>
+        <ol>Ahora añade el método añadirMetodo(nombre, funcion) que agregue una nueva
+            operación. Toma el operador nombre y la función con dos argumentos func(a,b) que lo
+            implementa.</ol>
+    </ul>
+
+    <script>
+        String.prototype.calcula = function () {
+            const partes = this.split(' ');
+            if (partes.length !== 3) {
+                throw new Error("Formato incorrecto. Debe ser 'NUMERO operador NUMERO'.");
+            }
+
+            const numero1 = parseFloat(partes[0]);
+            const operador = partes[1];
+            const numero2 = parseFloat(partes[2]);
+
+            if (isNaN(numero1) || isNaN(numero2)) {
+                throw new Error("Los valores deben ser números válidos.");
+            }
+
+            switch (operador) {
+                case '+':
+                    return numero1 + numero2;
+                case '-':
+                    return numero1 - numero2;
+                default:
+                    throw new Error("Operador no válido. Solo se admiten + y -.");
+            }
+        };
+
+        String.prototype.añadirMetodo = function (nombre, funcion) {
+            String.prototype[nombre] = funcion;
+        };
+
+        const expresion = "1 + 2";
+        const resultado = expresion.calcula();
+        console.log(resultado); 
+
+        String.prototype.añadirMetodo("multiplicar", function (a, b) {
+            return a * b;
+        });
+
+        const resultadoMultiplicacion = "3 multiplicar 4".calcula();
+        console.log(resultadoMultiplicacion); 
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.container{
+    margin: auto;
+    width: 60%;
+    border: 1px solid rgb(87, 86, 86);
+    padding: 10px;
+}
+
+button{
+    text-align: center;
+    margin: 1em auto;
+    color: white;
+    background-color: rgb(126, 73, 73);
+    border-radius: 8px;
+    padding: 0.5em 0.5em;
+}
+
+button:hover{
+    background-color: rgb(124, 27, 27);
+}
+
+input{
+    margin-left: 1em;
+}
+
+form:first-child{
+    display: flex;
+    flex-wrap: wrap;
+}

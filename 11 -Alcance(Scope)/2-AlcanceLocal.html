@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Alcance Local: Crea una variable local dentro de una función y trata de acceder a esa variable desde fuera de la
+        función. Observa el comportamiento.</p>
+    <script>
+        function ejemplo() {
+            let localVariable = "Soy una variable local";
+        }
+        console.log(localVariable); // Esto generará un error, ya que la variable local no es visible fuera de la
+        //función.
+    </script>
+</body>
+
+</html>

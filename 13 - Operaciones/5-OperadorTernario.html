@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Operador Ternario:</h2>
+    <ul>
+        <li>Crea una función que determine si un número es positivo o negativo y devuelva "Positivo" o "Negativo"
+            utilizando el operador ternario.</li>
+        <li>Escribe un programa que determine si un estudiante aprobó o reprobó un examen con una calificación de 60
+            puntos como mínimo.</li>
+    </ul>
+    <h3>Determinar si un número es positivo o negativo usando el operador ternario:</h3>
+    <script>
+        function determinarPositivoNegativo(numero) {
+            return numero >= 0 ? "Positivo" : "Negativo";
+        }
+
+        let num1 = 7;
+        let num2 = -3;
+
+        document.write(`El número ${num1} es ${determinarPositivoNegativo(num1)}.<br>`);
+        document.write(`El número ${num2} es ${determinarPositivoNegativo(num2)}.`);
+    </script>
+    <h3>Determinar si un estudiante aprobó o reprobó un examen usando el operador ternario:</h3>
+    <script>
+        function determinarAprobacion(calificacion) {
+            return calificacion >= 60 ? "Aprobado" : "Reprobado";
+        }
+
+        let califEstudiante1 = 75;
+        let califEstudiante2 = 45;
+
+        document.write(`El estudiante 1 está ${determinarAprobacion(califEstudiante1)}.<br>`);
+        document.write(`El estudiante 2 está ${determinarAprobacion(califEstudiante2)}.`);
+    </script>
+
+</body>
+
+</html>

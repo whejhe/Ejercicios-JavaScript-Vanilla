@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Añade la información con posterioridad a la creación de la estructura :</p>
+    <ul>
+        <li>Muestra cuántos módulos hay almacenados</li>
+        <li>Muestra el contenido de la estructura</li>
+        <li>Devuelve las abreviaturas de todos los módulos guardados</li>
+        <li>Devuelve el nombre completo de todos los módulos</li>
+        <li>Consulta si está el módulo "DAW"</li>
+        <li>Si está, elimínalo.</li>
+    </ul>
+
+    <script>
+
+        const informacionModulos = new Map();
+
+        informacionModulos.set('DAW', 'Desarrollo de Aplicaciones Web');
+        informacionModulos.set('DIW', 'Diseño de Interfaces Web');
+        informacionModulos.set('DWEC', 'Desarrollo Web en Entorno Cliente');
+        informacionModulos.set('BD', 'Bases de Datos');
+
+        console.log('Número de módulos almacenados:', informacionModulos.size);
+
+        console.log('Contenido de la estructura:', informacionModulos);
+
+        const abreviaturas = Array.from(informacionModulos.keys());
+        console.log('Abreviaturas de los módulos:', abreviaturas);
+
+        const nombresCompletos = Array.from(informacionModulos.values());
+        console.log('Nombres completos de los módulos:', nombresCompletos);
+
+        const estaDAW = informacionModulos.has('DAW');
+        console.log('¿Está el módulo "DAW" en la estructura?', estaDAW);
+
+        if (estaDAW) {
+            informacionModulos.delete('DAW');
+            console.log('El módulo "DAW" ha sido eliminado.');
+        }
+
+        console.log('Contenido de la estructura después de eliminar "DAW":', informacionModulos);
+
+    </script>
+</body>
+
+</html>

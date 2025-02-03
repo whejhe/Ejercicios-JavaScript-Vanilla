@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Manejo de Múltiples Promesas: Crea un array de promesas y utilízalas para realizar múltiples operaciones
+        asincrónicas. Espera a que todas las promesas se resuelvan y muestra los resultados cuando todas estén
+        completas.</p>
+    <script>
+        // Función que simula una operación asincrónica con una promesa
+        function operacionAsincronica(valor) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(`Resultado para ${valor}`);
+                }, Math.random() * 2000); // Simulación de retraso aleatorio
+            });
+        }
+
+        // Crear un array de promesas
+        const promesas = [
+            operacionAsincronica(1),
+            operacionAsincronica(2),
+            operacionAsincronica(3)
+        ];
+
+        // Utilizar Promise.all() para esperar a que todas las promesas se resuelvan
+        Promise.all(promesas)
+            .then(resultados => {
+                console.log('Todas las promesas se han resuelto:');
+                resultados.forEach(resultado => {
+                    console.log(resultado);
+                });
+            })
+            .catch(error => {
+                console.error('Al menos una promesa se ha rechazado:', error);
+            });
+
+    </script>
+</body>
+
+</html>

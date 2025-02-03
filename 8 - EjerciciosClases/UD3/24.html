@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Escribe una función filtrarRangoEnLugar(arr, a, b) que
+        obtenga un array arr y remueva del mismo todos los valores excepto
+        aquellos que se encuentran entre a y b. El test es: a ≤ arr[i] ≤ b.
+    </p>
+    <p>La función solo debe modificar el array. No debe devolver nada.</p>
+    <script>
+        function filtrarRangoEnLugar(arr, a, b) {
+            for (let i = arr.length - 1; i >= 0; i--) {
+                if (arr[i] < a || arr[i] > b) {
+                    arr.splice(i, 1);
+                }
+            }
+        }
+
+        const arrayNum = [21, 57, 3, 67, 8, 12, 66, 1, 0, -5, 71];
+        const valorMin = 10;
+        const valorMax = 66;
+
+        filtrarRangoEnLugar(arrayNum, valorMin, valorMax);
+
+        document.write("Array modificado: " + arrayNum.join(", "));
+
+    </script>
+</body>
+
+</html>

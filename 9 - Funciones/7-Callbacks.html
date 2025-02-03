@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Callbacks: Utiliza una función de devolución de llamada (callback) para realizar una operación asincrónica y
+        manejar el resultado una vez que esté disponible.</p>
+    <p>Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que la función
+        principal ha terminado de ejecutarse</p>
+    <script>
+        function suma(a,b,callback){
+            const resultado = a+b;
+            callback(resultado);
+        }
+
+        function miCallback(resultado){
+            console.log("El resultado es: "+resultado);
+        }
+
+        setTimeout(()=> suma(5,3,miCallback),2000);
+    </script>
+</body>
+
+</html>

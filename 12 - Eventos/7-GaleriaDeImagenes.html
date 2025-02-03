@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 20em;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Galería de Imágenes:
+        Crea una galería de imágenes. Agrega eventos para permitir a los usuarios navegar entre las imágenes con botones
+        "anterior" y "siguiente".</p>
+    <div class="galeria">
+        <button id="anterior">Anterior</button>
+        <img id="imagenPrincipal" src="img/img1.jpg" alt="Imagen 1">
+        <button id="siguiente">Siguiente</button>
+    </div>
+
+    <script>
+        // Paso 1: Seleccionar elementos por su ID
+        const imagenPrincipal = document.getElementById('imagenPrincipal');
+        const botonAnterior = document.getElementById('anterior');
+        const botonSiguiente = document.getElementById('siguiente');
+
+        // Lista de imágenes
+        const imagenes = ['img1.jpg', 'img2.jpg', 'img3.jpg'];
+        let imagenActual = 0;
+
+        // Función para actualizar la imagen principal
+        function actualizarImagen() {
+            imagenPrincipal.src = imagenes[imagenActual];
+        }
+
+        // Paso 2: Agregar eventos a los botones "Anterior" y "Siguiente"
+        botonAnterior.addEventListener('click', function () {
+            imagenActual = (imagenActual - 1 + imagenes.length) % imagenes.length;
+            actualizarImagen();
+        });
+
+        botonSiguiente.addEventListener('click', function () {
+            imagenActual = (imagenActual + 1) % imagenes.length;
+            actualizarImagen();
+        });
+
+        // Mostrar la primera imagen al cargar la página
+        actualizarImagen();
+    </script>
+</body>
+
+</html>

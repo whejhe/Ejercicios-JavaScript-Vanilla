@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Bloques y Alcance: Declara una variable dentro de un bloque de código ({ }) y trata de acceder a ella desde fuera
+        del bloque. Observa cómo el alcance de bloque afecta la visibilidad de la variable.</p>
+    <script>
+        {
+            let variableDeBloque = "Soy una variable de bloque";
+        }
+
+        // Tratar de acceder a la variable desde fuera del bloque
+        console.log(variableDeBloque); // Esto generará un error: "variableDeBloque is not defined"
+
+    </script>
+</body>
+
+</html>

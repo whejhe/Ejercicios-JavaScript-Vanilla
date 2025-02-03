@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Escribe la función caramelizar(str) que convierta palabras
+        separadas por guión como “mi-cadena-corta” en palabras con
+        mayúscula “miCadenaCorta”</p>
+
+    <script>
+
+        function caramelizar(str){
+            const palabras = str.split('-');
+            palabras[0] = palabras[0].charAt(0).toLowerCase() + palabras[0].slice(1);
+
+            for(let i=1;i<palabras.length;i++){
+                palabras[i] = palabras[i].charAt(0).toUpperCase() + palabras[i].slice(i);
+            }
+            const resultado = palabras.join('');
+            return resultado;
+        }
+
+        const cadena = caramelizar("mi-cadena-corta");
+        document.write(cadena);
+    </script>
+</body>
+</html>

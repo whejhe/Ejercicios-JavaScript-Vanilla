@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Genera un sorteo de la bonoloto. Debes mostrar 5 números entre
+        1 y 50 (ambos inclusive), que no se repitan, y otro número más, el
+        complementario, que debe estar entre 1 y 9 (ambos inclusive). Mostrar por
+        pantalla el sorteo obtenido.</p>
+
+    <script>
+        function numAleatorio(num1, num2) {
+            return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+        }
+
+        function generaSorteo() {
+            let sorteo = [];
+            
+            while (sorteo.length < 5) {
+                let numero = numAleatorio(1, 50);
+                if (!sorteo.includes(numero)) {
+                    sorteo.push(numero);
+                }
+            }
+
+            let complementario = numAleatorio(1, 9);
+
+            return {
+                numeros: sorteo,
+                complementario: complementario
+            };
+        }
+
+        let sorteo = generaSorteo();
+        document.write("Combinacion de la bonoloto: " + sorteo.numeros + " Complementario: " + sorteo.complementario);
+    </script>
+</body>
+
+</body>
+</html>

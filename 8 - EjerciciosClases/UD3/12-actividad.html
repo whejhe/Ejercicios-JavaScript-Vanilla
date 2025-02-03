@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Tenemos los precios de los artículos expresados de la siguiente forma
+        de “€120.”. Es decir: el signo del euro va primero, luego el número y al final un
+        punto..
+        Crea una función extraerValor(str) que extraiga el valor numérico de dicho string y
+        lo devuelva.</p>
+
+    <script>
+        function extraerValor(str) {
+            const regex = /€(\d+)/;
+            const match = str.match(regex);
+
+            if (match && match[1]) {
+                const valor = parseInt(match[1], 10); 
+                return valor;
+            } else {
+                return null;
+            }
+        }
+
+        const precio = "€120";
+        const valor = extraerValor(precio);
+        document.write("El valor de " + precio + " es " + valor);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Los eventos en JavaScript son acciones o sucesos que ocurren en el navegador, como clics del mouse, pulsaciones
+        de teclas, cambios de tamaño de ventana, carga de páginas, etc. Estos eventos permiten que una página web
+        responda de manera interactiva a las acciones del usuario y a otros cambios en el entorno del navegador.</p>
+    <button id="miBoton">Haz clic</button>
+    <script>
+        // Paso 1: Seleccionar el botón por su ID
+        const boton = document.getElementById('miBoton');
+
+        // Paso 2: Agregar un evento de clic al botón y definir la función manejadora del evento
+        boton.addEventListener('click', function () {
+            // Paso 3: Definir la acción que se ejecutará cuando se haga clic en el botón
+            alert('¡Hiciste clic en el botón!');
+        });
+    </script>
+</body>
+
+</html>

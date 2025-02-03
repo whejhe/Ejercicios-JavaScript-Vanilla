@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Funciones Anidadas: Crea una función que contenga una función interna y explora cómo las funciones pueden acceder
+        a variables en su ámbito exterior.</p>
+    <script>
+        function suma(a,b){
+            let resultado = a+b;
+            if(resultado %2===0){
+                function resta1(){
+                    return resultado -1;
+                }
+                const resultadoResta = resta1();
+                return resultadoResta;
+            }
+            return resultado;
+        }
+
+        console.log(suma(5,5));
+    </script>
+</body>
+
+</html>

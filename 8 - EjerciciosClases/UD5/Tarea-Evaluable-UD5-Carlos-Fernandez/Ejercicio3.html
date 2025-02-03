@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Factura(cliente, elementos, info) {
+            this.cliente = cliente;
+            this.elementos = elementos;
+            this.info = info;
+            this.empresa = {
+                nombre: "Mi Empresa",
+                direccion: "Calle Piruleta, 7",
+                telefono: "123-456-789",
+                cif: "A46346754"
+            };
+
+            this.calcularTotal = function () {
+                let baseImponible = 0;
+                for (const elemento of this.elementos) {
+                    baseImponible += elemento.cantidad * elemento.precio;
+                }
+                const iva =  0.21;
+                const total = baseImponible + (baseImponible * iva);
+                return total;
+            };
+
+            this.mostrarTotal = function () {
+                const total = this.calcularTotal();
+                console.log(`Total de la factura: $${total.toFixed(2)}`);
+            };
+        }
+
+        const cliente = {
+            nombre: "Carlos",
+            direccion: "Calle rodriguez de la fuente, nº 6",
+            telefono: "987-654-321",
+            nif: "B98765432"
+        };
+
+        const elementos = [
+            { descripcion: "Producto 1", cantidad: 2, precio: 10 },
+            { descripcion: "Producto 2", cantidad: 1, precio: 80 }
+        ];
+
+        const info = { baseImponible: 0, iva: 21, total: 0, formaPago: "contado" };
+
+        const factura1 = new Factura(cliente, elementos, info);
+
+        factura1.mostrarTotal();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

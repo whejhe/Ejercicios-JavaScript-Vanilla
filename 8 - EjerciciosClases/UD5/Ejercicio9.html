@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Crear un objeto coche con la propiedad deposito y un método llenarDeposito
+        de forma que se le pase una cantidad y la acumule a la propiedad deposito. Ahora crea
+        dos objetos más toyota y renault que herede de coche. Estos objetos deben tener una
+        propiedad llamada matricula. Sin añadir nuevos métodos debes hacer que sea posible
+        añadir combustible a un coche sin que el otro coche altere su valor de su deposito.</p>
+    <script>
+        let coche = {
+            name:'',
+            deposito:100,
+            lleno:false,
+            cantidad:50
+        }
+        function llenarDeposito(name,cantidad){
+                if(cantidad>=deposito){
+                    lleno = true;
+                }else{
+                    this.deposito = this.deposito + cantidad;
+                }
+            }
+
+        let toyota = {
+            name:'toyota',
+            matricula:'678122H',
+        }
+        let renault = {
+            name:'renault',
+            matricula:'484378F',
+        }
+
+        toyota.prototype = coche;
+        renault.prototype = coche;
+
+        /*llenarDeposito('toyota',50);*/
+        console.log(toyota);
+        
+        /*toyota.deposito = llenarDeposito(50);
+        console.log(toyota.lleno);*/
+    </script>
+</body>
+</html>

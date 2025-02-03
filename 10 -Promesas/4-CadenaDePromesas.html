@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Cadena de Promesas: Crea dos promesas que se resuelvan después de ciertos retrasos y encadénalas para que la
+        segunda promesa dependa del resultado de la primera.</p>
+    <script>
+        const promesa1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('Primera promesa resuelta');
+            }, 3000);
+        })
+        const promesa2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                //forzamos error
+                reject(new Error('Error en la Segunda promesa'));
+            }, 4000);
+        })
+        const promesa3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('Tercera promesa resuelta');
+            }, 5000);
+        })
+
+        //Encadenar las promesas
+        promesa1
+            .then(resultado1 => {
+                console.log(resultado1); // Muestra el resultado de la primera promesa
+                return promesa2; // Devuelve la segunda promesa para encadenarla
+            })
+            .then(resultado2 => {
+                console.log(resultado2); // Muestra el resultado de la segunda promesa
+                return promesa3; // Devuelve la tercera promesa para encadenarla
+            })
+            .then(resultado3 => {
+                console.log(resultado3); // Muestra el resultado de la tercera promesa
+            })
+            .catch(error => {
+                console.error(error.message); // Manejo de errores
+            });
+    </script>
+</body>
+
+</html>

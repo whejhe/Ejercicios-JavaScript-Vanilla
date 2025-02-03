@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Funciones Flecha: Convierte algunas de las funciones que has creado en ejercicios anteriores en funciones de
+        flecha.</p>
+    <script>
+        /*function sumaResta(a,b){
+            let suma = a+b;
+            let resta = a-b;
+            return [suma, resta];
+        }*/
+        const sumaResta = (a,b) => {
+            const suma = a + b;
+            const resta = a - b;
+            return [suma, resta];
+        }
+
+        const resultado = sumaResta(5,3);
+        console.log(resultado);
+    </script>
+</body>
+
+</html>

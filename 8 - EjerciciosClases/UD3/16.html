@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Usando una expresión regular, buscar dentro de un texto palabras
+        con una longitud determinada. La longitud la decidirá el usuario en tiempo de
+        ejecución</p>
+    <script>
+        function buscar(texto, longitud) {
+            let expresion = new RegExp(`\\b\\w{${longitud}}\\b`, "g");
+            let busqueda = texto.search(expresion);
+            document.write(busqueda);
+        }
+
+
+        let texto = "El director abrió una puerta. Ante ellos se extendía el jardín infantil, un jardín donde los niños, sus uniformes brochados de colores a la moda, estaban jugando. Al otro lado de la alambrada, el campo estaba lleno de niños de todas las edades, corriendo, saltando, jugando. En el aire flotaban las risas agudas y excitadas de los niños, mezcladas con los tonos más profundos y melodiosos de la música mecánica"
+        buscar(texto, 3);
+
+    </script>
+</body>
+
+</html>

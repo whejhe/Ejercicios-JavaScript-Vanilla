@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Contador de Clics:
+        Crea un botón y un contador que se incremente cada vez que el botón se hace clic. Muestra el valor del contador
+        en la página.</p>
+    <button id="botonClic">Hacer Clic</button>
+    <p>Contador: <span id="contador">0</span></p>
+
+    <script>
+        // Paso 1: Seleccionar el botón y el elemento del contador por su ID
+        const boton = document.getElementById('botonClic');
+        const contadorElemento = document.getElementById('contador');
+
+        // Inicializar el contador
+        let contador = 0;
+
+        // Paso 2: Agregar un evento de clic al botón y definir la función manejadora del evento
+        boton.addEventListener('click', function () {
+            // Paso 3: Incrementar el contador cada vez que se hace clic en el botón
+            contador++;
+            // Paso 4: Actualizar el contenido del elemento del contador
+            contadorElemento.textContent = contador;
+        });
+    </script>
+</body>
+
+</html>

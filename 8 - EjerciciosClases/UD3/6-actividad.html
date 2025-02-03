@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Haz calculadora científica. Implementa al menos 5 funciones
+        adicionales ( por ejemplo: x^y, n!, el valor de PI, valor absoluto de un número,
+        …).</p>
+
+    <script>
+        let num1;
+        let num2;
+
+        function sumar(num1, num2) {
+            return num1 + num2;
+        };
+
+        function restar(num1, num2) {
+            return num1 - num2;
+        };
+
+        function multiplicar(num1, num2) {
+            return num1 * num2;
+        };
+
+        function dividir(num1, num2) {
+            return num1 / num2;
+        };
+
+        function potencia(num1, num2) {
+            return Math.pow(num1, num2);
+        };
+
+        function factorial(num1) {
+            let factorial = 1;
+            for (let i = 1; i <= num1; i++) {
+                factorial = factorial * i;
+            }
+            return factorial;
+        };
+
+        function valorAbsoluto(num1) {
+            return Math.abs(num1);
+        };
+
+        function raizCuadrada(num1) {
+            return Math.sqrt(num1);
+        };
+
+        function valorPi() {
+            return Math.PI;
+        };
+
+        // Obtener la opción del usuario
+        const opcion = parseInt(prompt("Menu:"
+            + "\n1. Sumar"
+            + "\n2. Restar"
+            + "\n3. Multiplicar"
+            + "\n4. Dividir"
+            + "\n5. Potencia"
+            + "\n6. Factorial"
+            + "\n7. Valor Absoluto"
+            + "\n8. Raíz Cuadrada"
+            + "\n9. Valor de Pi"
+            + "\n10. Salir"
+            + "\n\nSeleccione una opción del menú:"));
+
+        // Realizar la operación seleccionada
+        let resultado;
+        switch (opcion) {
+            case 1:
+                num1 = parseFloat(prompt("Ingrese el primer número:"));
+                num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                resultado = sumar(num1, num2);
+                break;
+            case 2:
+                num1 = parseFloat(prompt("Ingrese el primer número:"));
+                num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                resultado = restar(num1, num2);
+                break;
+            case 3:
+                num1 = parseFloat(prompt("Ingrese el primer número:"));
+                num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                resultado = multiplicar(num1, num2);
+                break;
+            case 4:
+                num1 = parseFloat(prompt("Ingrese el primer número:"));
+                num2 = parseFloat(prompt("Ingrese el segundo número:"));
+                resultado = dividir(num1, num2);
+                break;
+            case 5:
+                num1 = parseFloat(prompt("Ingrese la base (x):"));
+                num2 = parseFloat(prompt("Ingrese el exponente (y):"));
+                resultado = potencia(num1, num2);
+                break;
+            case 6:
+                num1 = parseInt(prompt("Ingrese un número para calcular su factorial:"));
+                resultado = factorial(num1);
+                break;
+            case 7:
+                num1 = parseFloat(prompt("Ingrese un número para calcular su valor absoluto:"));
+                resultado = valorAbsoluto(num1);
+                break;
+            case 8:
+                num1 = parseFloat(prompt("Ingrese un número para calcular su raíz cuadrada:"));
+                resultado = raizCuadrada(num1);
+                break;
+            case 9:
+                resultado = valorPi();
+                break;
+            default:
+                resultado = "Opción no válida";
+        }
+
+        document.write("Resultado:", resultado);
+
+
+    </script>
+</body>
+
+</html>

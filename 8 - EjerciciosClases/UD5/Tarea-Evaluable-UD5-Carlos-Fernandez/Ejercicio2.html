@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pruducto(codigo, nombre, precio){
+            this.codigo=codigo;
+            this.nombre=nombre;
+            this.precio=precio;
+
+            this.imprimeDatos = function(){
+                console.log("Codigo: "+this.codigo);
+                console.log("Nombre: "+this.nombre);
+                console.log("Precio: "+this.precio);
+            };
+        }
+
+        const producto1 = new pruducto(1,"aguacate", 1.5);
+        const producto2 = new pruducto(2,"limon", 1);
+        const producto3 = new pruducto(3,"cebolla", 0.5);
+
+        const productos = [producto1,producto2,producto3];
+
+        productos.forEach(function(producto){
+            producto.imprimeDatos();
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

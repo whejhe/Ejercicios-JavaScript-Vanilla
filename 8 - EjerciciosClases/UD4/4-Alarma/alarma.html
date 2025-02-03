@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Alarma</h1>
+    <p>La hora actual es: <span id="horaActual"></span></p>
+
+    <p>Establecer hora de alarma:</p>
+    <input type="time" id="horaAlarma">
+    <button id="configurarAlarma">Configurar Alarma</button>
+
+    <div id="alarmaDiv" style="display: none;">
+        <p>¡Es hora de la alarma!</p>
+        <button id="descansar">Descansar 2 minutos</button>
+        <button id="detenerAlarma">Detener Alarma</button>
+    </div>
+
+    <script>
+        mostrarHoraActual();
+        document.getElementById("configurarAlarma").addEventListener("click", configurarAlarma);
+    </script>
+</body>
+
+</html>

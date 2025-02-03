@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Empleado(nombre = "", departamento = "General") {
+            this.nombre = nombre;
+            this.departamento = departamento;
+        }
+
+        function Director(nombre = "", departamento = "General") {
+            Object.assign(this, new Empleado(nombre, departamento));
+            this.informes = [];
+        }
+
+        Director.prototype = Object.create(Empleado.prototype);
+
+        function Trabajador(nombre = "", departamento = "General") {
+            Object.assign(this, new Empleado(nombre, departamento));
+            this.proyectos = [];
+        }
+
+        Trabajador.prototype = Object.create(Empleado.prototype);
+
+        function Ingeniero(nombre = "", departamento = "Ingeniería") {
+            Object.assign(this, new Trabajador(nombre, departamento));
+            this.máquina = "";
+        }
+
+        Ingeniero.prototype = Object.create(Trabajador.prototype);
+
+        const empleado = new Empleado("Juan", "Recursos Humanos");
+        const director = new Director("Maria", "Dirección de Proyectos");
+        director.informes.push("Informe 1", "Informe 2");
+        const trabajador = new Trabajador("Carlos", "Desarrollo Web");
+        trabajador.proyectos.push("Proyecto A", "Proyecto B");
+        const ingeniero = new Ingeniero("Laura");
+        ingeniero.máquina = "Máquina 1";
+
+        console.log("Empleado:");
+        console.log(empleado);
+
+        console.log("Director:");
+        console.log(director);
+
+        console.log("Trabajador:");
+        console.log(trabajador);
+
+        console.log("Ingeniero:");
+        console.log(ingeniero);
+
+    </script>
+</head>
+
+<body>
+    <p>Queremos implementar la siguiente estructura:
+        • Un Empleado se define con las propiedades nombre (cuyo valor por defecto es una cadena
+        vacía), y un departamento (cuyo valor por defecto es "General").
+        • Un Director está basado en Empleado. Añade la propiedad informes (cuyo valor por defecto es
+        un array vacío).
+        • Un Trabajador está basado también en Empleado. Añade la propiedad proyectos (cuyo valor
+        por defecto es un array vacío).
+        • Un Ingeniero está basado en Trabajador. Añade la propiedad máquina (cuyo valor por defecto
+        es una cadena vacía) y sobreescribe la propiedad departamento con el valor "Ingeniería".
+        Crear los objetos y casos de prueba necesarios para comprobar el correcto funcionamiento de la
+        jerarquía.</p>
+</body>
+
+</html>

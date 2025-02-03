@@ -1,0 +1,53 @@
+body {
+    background-image: url(blacJack.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+header{
+    min-height: 10em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.dealer, .player {
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.dealer{
+    margin-bottom: 60px;
+}
+
+.card {
+    width: 7em;
+    height: 10em;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}
+
+button{
+    margin: 5em auto;
+    display: block;
+    height: 5em;
+    width: 15em;
+    color: white;
+    background-color: red;
+    border: 1px solid black;
+    box-shadow: 10px 2px 15px black;
+}
+
+button:hover{
+    transform: scale(110%);
+}

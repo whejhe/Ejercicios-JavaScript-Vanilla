@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio2.css">
+    <title>Document</title>
+    <script>
+        const filas = 100;
+        const columnas = 100;
+        let contador = 0;
+        let arrayDePrimos = [];
+        let arrayCasiPrimos = [];
+
+        function crearTabla() {
+            let tabla = document.getElementById("tabla");
+            let numero = 1;
+            for (let i = 1; i <= filas; i++) {
+                const fila = tabla.appendChild(document.createElement('tr'));
+                for (let j = 1; j <= columnas; j++) {
+                    const celda = fila.appendChild(document.createElement('td'));
+                    celda.innerText = numero;
+                    numero++;
+                }
+            }
+        }
+
+        function calculaNumeroPrimo(numero) {
+            for (let i = 2; i < numero; i++) {
+                if (numero % i == 0) {
+                    return false;
+                }
+            }
+            if (numero == 1) {
+                return false;
+            }
+            return true;
+        }
+
+        function calcularCasiPrimos(numero) {
+            let factoresPrimos = new Set();
+
+            for (let i = 2; i <= numero; i++) {
+                while (numero % i === 0) {
+                    factoresPrimos.add(i);
+                    numero = numero / i;
+                }
+            }
+
+            return factoresPrimos.size > 2;
+        }
+
+        function casiPrimos() {
+            let tabla = document.getElementById("tabla");
+            for (let i = 0; i < filas; i++) {
+                for (let j = 0; j < columnas; j++) {
+                    const celda = tabla.rows[i].cells[j];
+                    const numero = parseInt(celda.innerText);
+                    if (calcularCasiPrimos(numero)) {
+                        celda.style.backgroundColor = "yellow";
+                        arrayCasiPrimos.push(numero);
+                    }
+                }
+            }
+            console.log(arrayCasiPrimos);
+        }
+
+
+        function primos() {
+            let tabla = document.getElementById("tabla");
+            for (let i = 0; i < filas; i++) {
+                for (let j = 0; j < columnas; j++) {
+                    const celda = tabla.rows[i].cells[j];
+                    const numero = parseInt(celda.innerText);
+                    if (calculaNumeroPrimo(numero)) {
+                        celda.style.backgroundColor = "green";
+                        arrayDePrimos.push(numero);
+                    }
+                }
+            }
+            console.log(arrayDePrimos);
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="primos()">Numero primos</button>
+    <button onclick="casiPrimos()">Numero casi primos</button>
+    <div>
+        <h1>Tabla</h1>
+        <table id="tabla">
+            <script>
+                crearTabla();
+            </script>
+        </table>
+    </div>
+    <!--
+    <p>Realiza un programa que cree dinámicamente una tabla de 100x100. Cada elemento de la tabla tendrá
+        un número único, que empezará en 1 y se irá incrementando de 1 en 1.
+        Esta página además tendrá un botón que será “Calcular numero casi primos”. Este botón hará que
+        todas las celdas de la tabla que tengan números “Casi primos” se pongan con un fondo amarillo.
+        Definimos aquí que es un “Número casi primo”:
+    </p>
+    <p>Número casi primo: es un número que solo es divisible por sí mismo, la unidad y por un solo número que
+        no sea ni la unidad ni si mismo.
+    </p>
+    <p>Ejemplo:
+        2 no es un número casi primo, porque es divisible por 1 y por 2, pero no por otro número.
+        4 es un número casi primo, porque es divisible por 1, por 4 y por 2.
+        8 no es un número casi primo, porque es divisible por 1, por 8 y por 2, pero además también es divisible
+        por 4.</p>
+        -->
+</body>
+
+</html>

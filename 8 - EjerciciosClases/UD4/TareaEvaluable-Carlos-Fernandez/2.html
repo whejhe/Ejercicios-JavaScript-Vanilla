@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            max-height: 20em;
+            width: auto;
+        }
+    </style>
+    <script>
+        const imagenPrincipal = document.getElementById('img1');
+        const botonAnterior = document.getElementById('anterior');
+        const botonSiguiente = document.getElementById('siguiente');
+        /*const imagenSiguiente = new promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(document.getElementById('img/img'+1+'.jpg'));
+            },1000);
+        })*/
+    </script>
+</head>
+
+<body>
+    <p>Debes realizar un carrusel de imágenes. Para ello debes tener una página principal y un
+        iframe de forma que en el iframe se vayan cargando con las imágenes del carrusel. La
+        ventana principal debe tener dos botones: (5 ptos.)
+         Botón iniciar: inicia la muestra de las imágenes, de tal manera que, cada 2
+        segundos muestre una nueva imagen (2 ptos.)
+         Botón parar: para el carrusel de imágenes, dejando fija la imagen que en ese
+        momento este mostrando. (0,5 ptos.)
+        En el iframe cuando se pulse sobre la imagen debe pasar a la siguiente imagen. (1 pto.)
+        El orden de las imágenes debe respetarse y no puede reiniciarse, solo pararse. De
+        forma que si la aplicación se cierra en una imagen debe aparecer esa imagen la
+        siguiente vez que abramos la aplicación. (1,5 ptos.)
+        Debes hacer que el iframe al tamaño de la imagen.
+        Recuerda que puedes usar el evento onClick de la etiqueta 'button'</p>
+    <div class="galeria">
+        <img id="img1" src="img/img1.jpg" alt="">
+        <button onclick="addEventListener(botonAnterior)" id="anterior">anterior</button>
+        <button onclick="addEventListener(botonSiguiente)" id="siguiente">siguiente</button>
+
+    </div>
+    <script>
+        const imagenes = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'];
+        let imagenActual;
+        function cambiaImagen() {
+            imagenPrincipal.src = imagenes[imagenActual];
+        }
+        botonAnterior.addEventListener('click', function () {
+            imagenActual = (imagenActual - 1 + imagenes.length) % imagenes.length;
+            console.log(ErrorEvent)
+            cambiarImagen();
+        });
+        botonSiguiente.addEventListener('click', function () {
+            imagenActual = (imagenActual + 1) % imagenes.length;
+            cambiarImagen();
+        })
+        cambiarImagen();
+    </script>
+
+</body>
+
+</html>

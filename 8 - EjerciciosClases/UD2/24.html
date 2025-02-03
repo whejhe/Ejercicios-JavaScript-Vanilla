@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let numPrimo = parseInt(prompt("Introduce un número primo"));
+        let esPrimo = true;
+
+        if(numPrimo <=1){
+            esPrimo = false;
+        }else if(numPrimo == 2){
+            esPrimo = true;
+        }else if(numPrimo % 2 == 0){
+            esPrimo = false;
+        }else{
+            for(let i = 3; i < numPrimo; i++){
+                if(numPrimo % i == 0){
+                    esPrimo = false;
+                    break;
+                }
+            }
+        }
+
+        if(esPrimo){
+            document.write("Es primo");
+        }else{
+            document.write("No es primo");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

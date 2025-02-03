@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Calcula el tiempo restante en milisegundos entre la fecha actual y la
+        fecha de fin de año.</p>
+    <script>
+        let fechaActual = new Date();
+        let fechaFinDeAnio = new Date("2023-12-31");
+        let tiempoRestante = fechaFinDeAnio - fechaActual;
+        document.write("Tiempo restante: "+tiempoRestante);
+        
+        let tiempoRestanteEnDias = tiempoRestante / (1000 * 60 * 60 * 24);
+        document.write("<br>Tiempo restante en dias: "+tiempoRestanteEnDias);
+    </script>
+</body>
+</html>

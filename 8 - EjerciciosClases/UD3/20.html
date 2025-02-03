@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Crea los arrays Ciudades y Capitales:<br>
+        Ciudades tendrá los elementos:<br>
+        “Madrid”, “Sevilla”, “París”, “Munich”, “Berlin”, “Roma”<br>
+        Y Capitales:
+        “Madrid”, “Berlin”, “Roma”, “Otawa”, “Atenas”<br>
+        a. Lista en la consola, los elementos del conjunto Ciudades<br>
+        b. Crea una función que obtenga las ciudades que son capitales (ciudades que
+        pertenezcan a los dos conjuntos o intersección)<br>
+        c. Modifica la función anterior para que en lugar de visualizar el mensaje en la
+        consola, cree un nuevo array llamado resultado.<br>
+        d. Une los dos arrays y muestra el resultado por consola.<br>
+        e. Crea una función flecha que guarde en un nuevo array las ciudades que no
+        sean capitales</p>
+    <p></p>
+    <script>
+        let Ciudades = ["Madrid", "Sevilla", "París", "Munich", "Berlin", "Roma"];
+        let Capitales = ["Madrid", "Berlin", "Roma", "Otawa", "Atenas"];
+
+        document.write("Ciudades: "+Ciudades+"<br>");
+
+        function ciudadesCapitales(ciudades, capitales) {
+            return ciudades.filter(ciudad => capitales.includes(ciudad));
+        }
+
+        function ciudadesCapitalesResultado(ciudades, capitales) {
+            let resultado = ciudades.filter(ciudad => capitales.includes(ciudad));
+            return resultado;
+        }
+
+        let ciudadesCapitalesArray = ciudadesCapitales(Ciudades, Capitales);
+        document.write("Ciudades que son capitales: "+ciudadesCapitalesArray+"<br>");
+
+        let resultado = ciudadesCapitalesResultado(Ciudades, Capitales);
+        document.write("Ciudades que son capitales (guardadas en resultado): "+resultado+"<br>");
+
+        let ciudadesYCapitales = [...Ciudades, ...Capitales];
+        document.write("Unión de Ciudades y Capitales: "+ciudadesYCapitales+"<br>");
+
+        const ciudadesNoCapitales = (ciudades, capitales) => {
+            return ciudades.filter(ciudad => !capitales.includes(ciudad));
+        };
+
+        let ciudadesNoCapitalesArray = ciudadesNoCapitales(Ciudades, Capitales);
+        document.write("Ciudades que no son capitales: "+ciudadesNoCapitalesArray);
+
+    </script>
+</body>
+
+</html>

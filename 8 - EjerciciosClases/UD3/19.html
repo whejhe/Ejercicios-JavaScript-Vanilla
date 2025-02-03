@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Crea el siguiente array:
+        let numeros = [ 2, 22, 36, 350, 12, 500 ];
+        Cree una función que ordene dicho array. Prueba a usar el método sort
+        y explica porque no funciona como debe.</p>
+    <script>
+        let numeros = [ 2, 22, 36, 350, 12, 500 ];
+        document.write(numeros.sort()+" Los ordena como si fuesen una cadena de texto");
+
+        resultado = numeros.sort(function(a,b){
+            return a-b;
+        });
+        document.write("<br>"+resultado+" Tenemos que darle parametros a la funcion sort() para que los trate correctamente");
+        
+    </script>
+</body>
+</html>

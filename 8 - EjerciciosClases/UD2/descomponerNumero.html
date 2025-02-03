@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let suma = 0;
+        let cifras = 0;
+
+        while (true) {
+            let num = prompt("Introduce un número");
+
+            if (num === '') {
+                break;
+            }
+
+            let num2 = parseInt(num);
+
+            if (!isNaN(num2)) {
+                suma += num2;
+                cifras++;
+            } else {
+                alert('Entrada no válida. Introduce un número válido.');
+            }
+        }
+
+        alert(`La suma de los números ingresados es ${suma} y tiene ${cifras} cifras.`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

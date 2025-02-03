@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function comprobarDNI(){
+            const dni = document.getElementById("dni").value;
+            const dniRegex = /^[0-9]{8}[a-zA-Z]{1}$/;
+            document.getElementById("dni").addEventListener("blur", function(){
+                if(!dniRegex.test(dni)){
+                    event.preventDefault();
+                    alert("El formato del DNI no es correcto");
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <p>Realiza un formulario donde se pueda introducir y enviar un DNI con letra. El formulario
+        deberá validar si la letra es correcta al:
+        a - Perder el foco del campo de texto donde se introduce el DNI.
+        b -  Enviar el formulario, cancelando el envío si el formato no es correcto.</p>
+
+        <!--Formulario con funcion para validar el DNI-->
+        <form>
+            <label for="dni">DNI</label>
+            <input type="text" id="dni">
+            <input type="submit" value="Enviar" onclick="comprobarDNI()">
+        </form>
+</body>
+</html>

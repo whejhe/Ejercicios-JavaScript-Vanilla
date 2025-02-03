@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lista de Tareas:
+        Crea una lista de tareas pendientes. Agrega eventos para marcar tareas como completadas, eliminar tareas y
+        agregar nuevas tareas a la lista.</p>
+    <h1>Lista de Tareas</h1>
+    <ul id="listaTareas">
+        <!-- Aquí se agregarán las tareas -->
+    </ul>
+    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+    <button id="agregarTarea">Agregar</button>
+
+    <script>
+        // Paso 1: Seleccionar elementos por su ID
+        const listaTareas = document.getElementById('listaTareas');
+        const nuevaTareaInput = document.getElementById('nuevaTarea');
+        const agregarTareaBoton = document.getElementById('agregarTarea');
+
+        // Paso 2: Agregar un evento de clic al botón de agregar tarea
+        agregarTareaBoton.addEventListener('click', function () {
+            const nuevaTareaTexto = nuevaTareaInput.value.trim(); // Obtener el texto de la nueva tarea
+
+            if (nuevaTareaTexto !== '') {
+                // Crear un elemento de lista para la nueva tarea
+                const nuevaTarea = document.createElement('li');
+                nuevaTarea.textContent = nuevaTareaTexto;
+
+                // Agregar un evento de clic para marcar como completada
+                nuevaTarea.addEventListener('click', function () {
+                    nuevaTarea.classList.toggle('completada');
+                });
+
+                // Agregar un botón para eliminar la tarea
+                const eliminarBoton = document.createElement('button');
+                eliminarBoton.textContent = 'Eliminar';
+                eliminarBoton.addEventListener('click', function () {
+                    listaTareas.removeChild(nuevaTarea);
+                });
+
+                nuevaTarea.appendChild(eliminarBoton);
+                listaTareas.appendChild(nuevaTarea);
+
+                // Limpiar el campo de entrada
+                nuevaTareaInput.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

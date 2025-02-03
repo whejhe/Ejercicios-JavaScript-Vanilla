@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Partiendo del array arr. Crea una función unico(arr) que devuelva un array con los
+        elementos que se encuentran una sola vez dentro de arr.</p>
+    <script>
+        function unico(arr) {
+            const contador = {};
+            const elementosUnicos = [];
+
+            arr.forEach(function (elemento) {
+                if (contador[elemento] === undefined) {
+                    contador[elemento] = 1;
+                } else {
+                    contador[elemento]++;
+                }
+            });
+
+            arr.forEach(function (elemento) {
+                if (contador[elemento] === 1) {
+                    elementosUnicos.push(elemento);
+                }
+            });
+
+            return elementosUnicos;
+        }
+
+        const arrayOriginal = [1, 2, 2, 3, 4, 5, 4, 6, 7, 7];
+        const elementosUnicos = unico(arrayOriginal);
+        console.log(elementosUnicos);
+
+    </script>
+</body>
+
+</html>

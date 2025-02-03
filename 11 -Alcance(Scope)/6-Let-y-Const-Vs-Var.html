@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Let y Const vs. Var: Compara el alcance de variables declaradas con let o const con el alcance de variables
+        declaradas con var. ¿Cuál es la diferencia en términos de alcance?</p>
+    <script>
+        function ejemploAlcance() {
+            if (true) {
+                var variableVar = "Variable con var";
+                let variableLet = "Variable con let";
+                const variableConst = "Variable con const";
+            }
+
+            console.log(variableVar); // Funciona y muestra "Variable con var"
+            console.log(variableLet); // Error: variableLet is not defined
+            console.log(variableConst); // Error: variableConst is not defined
+        }
+
+        ejemploAlcance();
+
+    </script>
+</body>
+
+</html>

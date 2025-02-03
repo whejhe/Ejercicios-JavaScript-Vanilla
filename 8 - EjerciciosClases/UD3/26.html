@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Supongamos que tenemos un array arr. Nos gustaría tener una copia ordenada
+        del mismo, pero mantener arr sin modificar.
+    </p>
+    <p>Crea una función copiaOrdenada(arr) que devuelva esa copia.</p>
+    <script>
+        function copiaOrdenada(arr) {
+            const copia = [...arr];
+
+            copia.sort(function (a, b) {
+                return a - b;
+            });
+
+            return copia;
+        }
+
+        const arrayOriginal = [5, 3, 9, 1, 7, 2];
+        const arrayCopiaOrdenada = copiaOrdenada(arrayOriginal);
+
+        console.log("Array Original: " + arrayOriginal);
+        console.log("Copia Ordenada: " + arrayCopiaOrdenada);
+
+    </script>
+</body>
+
+</html>

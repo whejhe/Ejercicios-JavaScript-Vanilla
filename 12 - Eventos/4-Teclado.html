@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Teclado:
+        Agrega un evento de teclado para detectar cuando se presiona una tecla específica (por ejemplo, la tecla
+        "Enter") en un campo de entrada de texto.</p>
+    <input type="text" id="campoTexto" placeholder="Presiona Enter">
+    <p id="mensaje"></p>
+
+    <script>
+        // Paso 1: Seleccionar el campo de entrada de texto y el elemento del mensaje por su ID
+        const campoTexto = document.getElementById('campoTexto');
+        const mensaje = document.getElementById('mensaje');
+
+        // Paso 2: Agregar un evento de teclado al campo de entrada de texto y definir la función manejadora del evento
+        campoTexto.addEventListener('keydown', function (event) {
+            // Paso 3: Verificar si la tecla presionada es "Enter" (código 13)
+            if (event.keyCode === 13) {
+                // Paso 4: Realizar una acción cuando se presiona Enter
+                mensaje.textContent = 'Tecla Enter presionada';
+            }
+        });
+    </script>
+</body>
+
+</html>

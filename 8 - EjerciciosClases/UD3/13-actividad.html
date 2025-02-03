@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Introduce una frase por teclado y devuelve el numero de palabras
+        de la frase. No uses split.</p>
+
+    <script>
+        function contarPalabras(frase) {
+            let numPalabras = 0;
+            let salto = false;
+            for (let i = 0; i < frase.length; i++) {
+                const caracter = frase.charAt(i);
+                if (caracter === " " && !salto) {
+                    numPalabras++;
+                    salto = true;
+                } else {
+                    salto = false;
+                }
+            }
+            return numPalabras;
+        }
+
+        const frase = prompt("Introduce una frase");
+        const numeroDePalabras = contarPalabras(frase);
+        document.write("La frase tiene " + numeroDePalabras + " palabras");
+    </script>
+</body>
+
+</html>

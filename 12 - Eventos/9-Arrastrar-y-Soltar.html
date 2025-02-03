@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos para el área de arrastre y los elementos */
+        #areaArrastre {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ccc;
+            margin: 20px;
+        }
+
+        .cuadro {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .cuadro.rojo {
+            background-color: red;
+        }
+
+        .cuadro.verde {
+            background-color: green;
+        }
+
+        .cuadro.azul {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Arrastrar y Soltar:
+        Crea un área en la página donde puedas arrastrar y soltar elementos. Agrega eventos para permitir el arrastre y
+        soltar de elementos.</p>
+    <h1>Arrastrar y Soltar</h1>
+    <div id="areaArrastre"></div>
+    <div class="cuadro rojo" draggable="true"></div>
+    <div class="cuadro verde" draggable="true"></div>
+    <div class="cuadro azul" draggable="true"></div>
+
+    <script>
+        // Paso 1: Seleccionar elementos por su clase
+        const cuadros = document.querySelectorAll('.cuadro');
+        const areaArrastre = document.getElementById('areaArrastre');
+
+        // Variables para el cuadro actualmente arrastrado
+        let cuadroArrastrado = null;
+
+        // Paso 2: Agregar eventos de arrastre a los cuadros
+        cuadros.forEach(cuadro => {
+            cuadro.addEventListener('dragstart', function (event) {
+                cuadroArrastrado = cuadro;
+                event.dataTransfer.setData('text/plain', cuadro.className);
+            });
+
+            cuadro.addEventListener('dragend', function () {
+                cuadroArrastrado = null;
+            });
+        });
+
+        // Paso 3: Agregar eventos de soltar al área de arrastre
+        areaArrastre.addEventListener('dragover', function (event) {
+            event.preventDefault(); // Permitir el arrastre sobre el área
+        });
+
+        areaArrastre.addEventListener('drop', function (event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado
+
+            if (cuadroArrastrado) {
+                const claseCuadro = event.dataTransfer.getData('text/plain');
+                cuadroArrastrado.className = `cuadro ${claseCuadro}`;
+                areaArrastre.appendChild(cuadroArrastrado);
+            }
+        });
+    </script>
+</body>
+
+</html>

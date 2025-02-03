@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Escribe una función que devuelva true si en un texto dado contiene
+        las palabras indicadas en los parámetros. De lo contrario devolverá false. La
+        función debe ser insensible a mayúsculas y minúsculas.</p>
+
+    <script>
+        function contiene(texto, palabras) {
+
+            texto = texto.toLowerCase();
+
+            // Iteramos sobre las palabras clave
+            for (let i = 0; i < palabras.length; i++) {
+
+                let palabra = palabras[i].toLowerCase();
+                
+                if (texto.indexOf(palabra) !== -1) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Ejemplo de uso:
+        let texto = '¿A quién va usted a creer, a mí o a sus propios ojos?';
+        let palabras = ['ejemplo', 'función', 'ojos'];
+
+        let resultado = contiene(texto, palabras);
+        document.write(resultado);
+
+    </script>
+</body>
+
+</html>

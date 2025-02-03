@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Operadores Aritméticos:</h2>
+    <ul>
+        <li>Crea un programa que calcule el área de un triángulo dado su base y altura.</li>
+        <li>Calcula el promedio de cuatro calificaciones.</li>
+        <li>Convierte grados Celsius a grados Fahrenheit utilizando la fórmula (C * 9/5) + 32.</li>
+    </ul>
+    <h3>Cálculo del Área de un Triángulo:</h3>
+    <script>
+        // Función para calcular el área de un triángulo
+        function calcularAreaTriangulo(base, altura) {
+            return (base * altura) / 2;
+        }
+
+        const baseTriangulo = 8;
+        const alturaTriangulo = 5;
+
+        const areaTriangulo = calcularAreaTriangulo(baseTriangulo, alturaTriangulo);
+
+        document.write(`El área del triángulo con base ${baseTriangulo} y altura ${alturaTriangulo} es ${areaTriangulo}`);
+    </script>
+    <h3>Cálculo del Promedio de Cuatro Calificaciones:</h3>
+    <script>
+        // Función para calcular el promedio de cuatro calificaciones
+        function calcularPromedio(calif1, calif2, calif3, calif4) {
+            return (calif1 + calif2 + calif3 + calif4) / 4;
+        }
+
+        const calificacion1 = 90;
+        const calificacion2 = 85;
+        const calificacion3 = 78;
+        const calificacion4 = 92;
+
+        const promedio = calcularPromedio(calificacion1, calificacion2, calificacion3, calificacion4);
+
+        document.write(`El promedio de las calificaciones es: ${promedio}`);
+    </script>
+    <h3>Conversión de Grados Celsius a Grados Fahrenheit:</h3>
+    <script>
+        // Función para convertir grados Celsius a grados Fahrenheit
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9 / 5) + 32;
+        }
+
+        const gradosCelsius = 25; // Ejemplo: 25 grados Celsius
+
+        const gradosFahrenheit = celsiusToFahrenheit(gradosCelsius);
+
+        document.write(`${gradosCelsius} grados Celsius son equivalentes a ${gradosFahrenheit} grados Fahrenheit.`);
+    </script>
+
+</body>
+
+</html>

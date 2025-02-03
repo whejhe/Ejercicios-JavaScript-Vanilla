@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>El alcance (scope) en JavaScript se refiere a las reglas que determinan dónde y cómo las variables pueden ser
+        accedidas dentro de tu código. El alcance define en qué partes del código una variable es visible y puede ser
+        utilizada. JavaScript tiene dos tipos principales de alcance:</p>
+    <ul>
+        <li>Alcance Global (Global Scope): Las variables declaradas fuera de cualquier función o bloque de código tienen
+            un alcance global. Esto significa que estas variables son accesibles desde cualquier parte del código,
+            incluyendo dentro de funciones y bloques.</li>
+        <script>
+            let globalVariable = "Soy una variable global";
+
+            function ejemplo() {
+                console.log(globalVariable); // Puedes acceder a la variable global desde aquí.
+            }
+        </script>
+        <li>Alcance Local (Local Scope): Las variables declaradas dentro de una función o bloque de código tienen un
+            alcance local. Esto significa que solo son accesibles dentro de la función o el bloque en el que se
+            declaran.</li>
+        <script>
+            function ejemplo() {
+                let localVariable = "Soy una variable local";
+                console.log(localVariable); // Puedes acceder a la variable local aquí.
+            }
+            console.log(localVariable); // Esto generará un error, ya que la variable local no es visible fuera de la función.
+        </script>
+    </ul>
+</body>
+
+</html>

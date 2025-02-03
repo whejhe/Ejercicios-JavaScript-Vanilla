@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio4.css">
+    <title>Document</title>
+    <script>
+        function ocultar(elemento) {
+            elemento.style.transition = "opacity 1s"; 
+            elemento.style.opacity = 0;
+            setTimeout(() => {
+                elemento.style.display = "none";
+            }, 1000);
+        }
+
+        function eliminar(elemento) {
+            elemento.remove();
+        }
+
+        function reaparecer() {
+            let elementos = document.getElementsByClassName("parrafos");
+            for(let i = 0; i<elementos.length; i++){
+                elementos[i].style.display = "block";
+                elementos[i].style.opacity = '1';
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Realiza un programa que tenga 3 elementos -p- y al hacer clic sobre ellos desaparezcan (se oculten) y
+        al hacer doble clic (los elimine del DOM). También deberá tener un botón “Reaparecer” que hará que
+        aparezcan todos los elementos desaparecidos (pero no los eliminados).</h3>
+    <p id="parrafo1" class="parrafos" onclick="ocultar(this)" ondblclick="eliminar(this)">Parrafo 1</p>
+    <p id="parrafo2" class="parrafos" onclick="ocultar(this)" ondblclick="eliminar(this)">Parrafo 2</p>
+    <p id="parrafo3" class="parrafos" onclick="ocultar(this)" ondblclick="eliminar(this)">Parrafo 3</p>
+    <button onclick="reaparecer()">Reaparecer</button>
+</body>
+
+</html>

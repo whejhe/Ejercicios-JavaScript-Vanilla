@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos para el botón y el menú */
+        #botonMenu {
+            background-color: #0074d9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #menu {
+            display: none;
+            background-color: #f4f4f4;
+            position: absolute;
+            list-style: none;
+            padding: 0;
+        }
+
+        #menu li {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Menú Desplegable:
+        Crea un menú desplegable con elementos de lista. Agrega eventos para mostrar y ocultar el menú cuando se hace
+        clic en un botón.</p>
+    <h1>Menú Desplegable</h1>
+    <button id="botonMenu">Mostrar Menú</button>
+    <ul id="menu">
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+    </ul>
+
+    <script>
+        // Paso 1: Seleccionar elementos por su ID
+        const botonMenu = document.getElementById('botonMenu');
+        const menu = document.getElementById('menu');
+
+        // Variable para controlar el estado del menú
+        let menuVisible = false;
+
+        // Paso 2: Agregar un evento de clic al botón para mostrar u ocultar el menú
+        botonMenu.addEventListener('click', function () {
+            if (menuVisible) {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+            menuVisible = !menuVisible;
+        });
+
+        // Paso 3: Agregar un evento de clic a los elementos del menú para ocultar el menú al hacer clic en una opción
+        menu.addEventListener('click', function () {
+            menu.style.display = 'none';
+            menuVisible = false;
+        });
+    </script>
+</body>
+
+</html>

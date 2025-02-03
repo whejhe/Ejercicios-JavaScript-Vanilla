@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Escribe una función que devuelva una cadena donde se alternen un
+        carácter mayúscula y uno minúscula</p>
+    <script>
+        function alterna(cadena) {
+            let resultado = '';
+            let mayuscula = true;
+
+            for (let i = 0; i < cadena.length; i++) {
+                let caracter = cadena.charAt(i);
+
+                if (mayuscula) {
+                    resultado += caracter.toUpperCase();
+                } else {
+                    resultado += caracter.toLowerCase();
+                }
+
+                mayuscula = !mayuscula;
+            }
+
+            return resultado;
+        }
+
+        entrada = 'Un texto cualquiera';
+        resultado = alterna(entrada);
+        
+        document.write(resultado); // Salida: 'HoLa MuNdO'
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Cierre (Closures): Crea una función que devuelve otra función y utiliza variables del ámbito exterior. Explora
+        cómo las funciones anidadas pueden capturar y utilizar variables de su entorno externo.</p>
+    <script>
+        function funcionExterna(valorExterno) {
+            // La función interna es un cierre que accede a la variable valorExterno
+            function funcionInterna() {
+                console.log(`Valor externo: ${valorExterno}`);
+            }
+
+            // Devolvemos la función interna como resultado
+            return funcionInterna;
+        }
+
+        // Creamos una instancia de la función externa
+        const miCierre = funcionExterna("Hola desde el ámbito exterior");
+
+        // Llamamos a la función interna, que aún tiene acceso a valorExterno
+        miCierre(); // Muestra "Valor externo: Hola desde el ámbito exterior" en la consola
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Carga de Datos: Simula la carga de datos desde una API utilizando una promesa. Puedes utilizar la función fetch
+        para esto. Luego, muestra los datos en la consola.</p>
+    <script>
+        // URL de la API de ejemplo
+        const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+
+        // Utiliza la función fetch para obtener datos de la API
+        fetch(apiUrl)
+            .then(response => {
+                // Verifica si la respuesta es exitosa (código de estado 200)
+                if (!response.ok) {
+                    throw new Error('Error al cargar los datos');
+                }
+                // Convierte la respuesta en formato JSON
+                return response.json();
+            })
+            .then(data => {
+                // Muestra los datos en la consola
+                console.log('Datos cargados exitosamente:');
+                console.log(data);
+            })
+            .catch(error => {
+                // Manejo de errores
+                console.error('Se produjo un error:', error);
+            });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Sombreamiento de Variables: Declara una variable con el mismo nombre en un alcance local y global. Observa cuál
+        de las dos variables se utiliza cuando intentas acceder a ella desde diferentes partes del código.</p>
+    <script>
+        let variable = "Soy una variable local";
+        function ejemplo() {
+            let variable = "Soy una variable global";
+        }
+        console.log(variable);
+        console.log(ejemplo());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Validación de Formulario:
+        Crea un formulario con campos de entrada y agrega un evento de envío que valide los datos ingresados antes de
+        enviar el formulario. Muestra un mensaje de error si los datos son incorrectos.</p>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <br>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="mensajeError"></p>
+
+    <script>
+        // Paso 1: Seleccionar el formulario, los campos de entrada y el elemento del mensaje de error por su ID
+        const formulario = document.getElementById('miFormulario');
+        const nombreInput = document.getElementById('nombre');
+        const correoInput = document.getElementById('correo');
+        const mensajeError = document.getElementById('mensajeError');
+
+        // Paso 2: Agregar un evento de envío al formulario y definir la función manejadora del evento
+        formulario.addEventListener('submit', function (event) {
+            // Paso 3: Realizar la validación de los datos
+            if (nombreInput.value === '' || correoInput.value === '') {
+                // Paso 4: Mostrar un mensaje de error si los datos son incorrectos y evitar el envío del formulario
+                mensajeError.textContent = 'Por favor, completa todos los campos.';
+                event.preventDefault(); // Evita el envío del formulario
+            }
+        });
+    </script>
+</body>
+
+</html>

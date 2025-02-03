@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert("Script en el head")
+    </script>
+</head>
+
+<body>
+    <script src="onclic.js"></script>
+    <h1>Titulo</h1>
+    <h2>Probando JavaScript en Body</h2>
+
+    <p id="demo">Mensaje 1</p>
+
+    <button type="button" onclick="myFunction()">Dale</button>
+
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Nuevo Mensaje";
+        }
+    </script>
+
+    <div class="section">
+        
+    </div>
+</body>
+
+</html>

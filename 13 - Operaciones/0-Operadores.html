@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Los operadores en programación son símbolos o palabras clave que se utilizan para realizar operaciones sobre
+        valores, variables y expresiones. Existen varios tipos de operadores en JavaScript, y aquí te proporcionaré una
+        breve explicación de algunos de los más comunes junto con ejemplos:</p>
+    <p>Operadores Aritméticos:</p>
+    <script>
+        let a = 10;
+        let b = 3;
+        let suma = a + b; // 13
+        let resta = a - b; // 7
+        let multiplicacion = a * b; // 30
+        let division = a / b; // 3.3333...
+        let residuo = a % b; // 1
+    </script>
+    <p>Operadores de Asignación:</p>
+    <script>
+        let x = 5;
+        x += 3; // x ahora es igual a 8
+        x -= 2; // x ahora es igual a 6
+        x *= 4; // x ahora es igual a 24
+        x /= 6; // x ahora es igual a 4
+    </script>
+    <p>Operadores de Comparación:</p>
+    <script>
+        let d = 5;
+        let f = "5";
+        let c = 3;
+
+        d == f; // true (comparación no estricta, valores iguales)
+        d === f; // false (comparación estricta, tipos de datos diferentes)
+        d != c; // true (valores diferentes)
+        d > c; // true (a es mayor que c)
+        d <= c; // false (a no es menor o igual que c)
+    </script>
+    <p>Operadores Lógicos:</p>
+    <script>
+        let edad = 25;
+        let esEstudiante = true;
+
+        if (edad >= 18 && esEstudiante) {
+            console.log("Puede obtener un descuento");
+        }
+
+        if (edad < 18 || esEstudiante) {
+            console.log("Eres menor de edad o estudiante");
+        }
+
+        if (!esEstudiante) {
+            console.log("No eres estudiante");
+        }
+
+    </script>
+    <p>Operador Ternario:</p>
+    <script>
+        let hora = 12;
+        let saludo = hora < 12 ? "Buenos días" : "Buenas tardes";
+        console.log(saludo); // "Buenas tardes" (porque es igual o mayor a 12)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Evento de Clic Simple:
+        Crea un botón en tu página web y agrega un evento de clic que muestre un mensaje en la consola cuando el botón
+        sea presionado.</p>
+    <button id="miBoton">Haz clic</button>
+
+    <script>
+        // Paso 1: Seleccionar el botón por su ID
+        const boton = document.getElementById('miBoton');
+
+        // Paso 2: Agregar un evento de clic al botón y definir la función manejadora del evento
+        boton.addEventListener('click', function () {
+            // Paso 3: Definir la acción que se ejecutará cuando se haga clic en el botón
+            console.log('¡Hiciste clic en el botón!');
+        });
+    </script>
+</body>
+
+</html>

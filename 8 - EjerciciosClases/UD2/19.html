@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //No consigo que funcione con console.log
+
+        document.write("Calculadora<br>");
+        document.write("Pulse 1 para sumar<br>");
+        document.write("Pulse 2 para restar<br>");
+        document.write("Pulse 3 para multiplicar<br>");
+        document.write("Pulse 4 para dividir<br>");
+        document.write("Pulse 5 para obtener el modulo<br>");
+        document.write("Pulse 6 para salir<br>");
+
+        let option = 0;
+
+        while (option !== 6) {
+            option = parseInt(prompt("Introduce una opción"));
+
+            if (option === 6) {
+                break;
+            }
+
+            let num1 = parseInt(prompt("Introduce un número"));
+            let num2 = parseInt(prompt("Introduce otro número"));
+
+            let resultado;
+
+            switch (option) {
+                case 1:
+                    resultado = num1 + num2;
+                    document.write("La suma de " + num1 + " y " + num2 + " es " + resultado);
+                    break;
+                case 2:
+                    resultado = num1 - num2;
+                    document.write("La resta de " + num1 + " y " + num2 + " es " + resultado);
+                    break;
+                case 3:
+                    resultado = num1 * num2;
+                    document.write("La multiplicación de " + num1 + " y " + num2 + " es " + resultado);
+                    break;
+                case 4:
+                    resultado = num1 / num2;
+                    document.write("La división de " + num1 + " y " + num2 + " es " + resultado);
+                    break;
+                case 5:
+                    resultado = num1 % num2;
+                    document.write("El módulo de " + num1 + " y " + num2 + " es " + resultado);
+                    break;
+                default:
+                document.write("Opción no válida");
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

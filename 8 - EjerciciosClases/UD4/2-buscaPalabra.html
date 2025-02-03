@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buscar() {
+            const busqueda = document.getElementById("busqueda");
+            const buscaText = busqueda.value; // Corregido el nombre de la variable
+            const caseSensitive = false;
+            const palabraCompleta = true;
+
+            if (window.find) {
+                if (buscaText) {
+                    const encontrada = window.find(buscaText, caseSensitive, palabraCompleta); // Corregido el nombre de la variable
+
+                    if (encontrada) { // Corregido el nombre de la variable
+                        document.getElementById("resultado").textContent = "Texto encontrado.";
+                    } else {
+                        document.getElementById("resultado").textContent = "Texto no encontrado.";
+                    }
+                } else {
+                    document.getElementById("resultado").textContent = "Ingresa una búsqueda.";
+                }
+            } else {
+                document.getElementById("resultado").textContent = "Tu navegador no admite esta funcionalidad.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label for="busqueda">Introduce la cadena a buscar:</label>
+        <input type="text" id="busqueda">
+        <button onclick="buscar()">Buscar</button>
+
+        <p id="resultado"></p>
+    </div>
+    <p>Crea un buscador para que tus visitantes puedan encontrar un texto cualquiera en tus páginas.</p>
+    <p>Pide al usuario que introduzca la cadena a buscar. Una vez hallado, pregunta si se desea continuar
+        la búsqueda y repite el proceso hasta que se le diga que pare o no encuentre más coincidencias.</p>
+    <p>Modifícalo para que solo busque palabras completas.</p>
+    <p>Modifícalo para que distinga entre mayúsculas y minúsculas.
+        Comprueba que el método existe en el navegador, en caso contrario, avisa al usuario.</p>
+</body>
+
+</html>

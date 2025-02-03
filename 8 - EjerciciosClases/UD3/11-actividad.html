@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Crea una función trunque las palabras de un texto. A la función se le
+        pasaran dos argumentos, el texto donde buscar y la longitud máxima de palabra.
+        Si la palabra excede la longitud, la función truncara la palabra y se le añadirán
+        tres puntos, de forma que la longitud de la nueva palabra debe ser exactamente
+        el máximo pasado como argumento.</p>
+    <p>El resultado de la función debe mostrar el texto con las palabras truncadas.</p>
+
+    <script>
+        function truncate(texto, longitud) {
+            const palabras = texto.split(" ");
+            let palabrasTruncadas = [];
+
+            for (let i = 0; i < palabras.length; i++) {
+                if (palabras[i].length <= longitud) {
+                    palabrasTruncadas.push(palabras[i]);
+                } else {
+                    palabrasTruncadas.push(palabras[i].substring(0, longitud));
+                }
+            }
+
+            const textoTruncado = palabrasTruncadas.join(" ");
+            return textoTruncado;
+        }
+
+        const textoOriginal = ("El director abrió una puerta. Ante ellos se extendía el jardín infantil, un jardín donde los niños, sus uniformes brochados de colores a la moda, estaban jugando. Al otro lado de la alambrada, el campo estaba lleno de niños de todas las edades, corriendo, saltando, jugando. En el aire flotaban las risas agudas y excitadas de los niños, mezcladas con los tonos más profundos y melodiosos de la música mecánica.");
+        const longitudMaxima = prompt("Dime la longitud de la palabra");
+
+        const textoTruncado = truncate(textoOriginal, longitudMaxima);
+
+        document.write(textoTruncado);
+
+
+    </script>
+</body>
+
+</html>
