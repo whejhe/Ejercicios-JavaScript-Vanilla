@@ -1,0 +1,166 @@
+/* Resetear estilos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+/* Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #333, #444);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 10vh;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+/* Secciones con Degradados Suaves */
+.section {
+    padding: 7rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background 0.5s ease; /* Transición suave entre secciones */
+}
+
+#inicio {
+    background: linear-gradient(135deg, #ff7f50, #ff6347);
+    color: white;
+}
+
+#acerca-de {
+    background: linear-gradient(135deg, #87ceeb, #6495ed);
+    color: white;
+    padding: 0 8rem;
+}
+
+#proyectos {
+    background: linear-gradient(135deg, #98fb98, #3cb371);
+    color: white;
+}
+
+#experiencia {
+    background: linear-gradient(135deg, #dda0dd, #ba55d3);
+    color: white;
+}
+
+#contacto {
+    background: linear-gradient(135deg, #ffa07a, #ff4500);
+    color: white;
+}
+
+.section h1, .section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section button {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    width: 30em;
+    margin: 2em auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.section button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.project, .job {
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    color: black;
+}
+
+/* Formulario de contacto */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 400px; */
+    margin: 0 auto;
+}
+
+#contact-form input, #contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+/* Botón Volver al Inicio */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #333, #444);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    transition: background 0.3s ease;
+}
+
+#back-to-top:hover {
+    background: linear-gradient(135deg, #444, #555);
+}
+
