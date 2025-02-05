@@ -1,3 +1,24 @@
+// Variables globales
+let currentIndex = 0;
+const carouselItems = document.querySelectorAll('.carousel-item');
+const totalItems = carouselItems.length;
+
+// Función para mover el carrusel
+function moveCarousel(direction) {
+    currentIndex += direction;
+
+    // Limitar el índice dentro del rango válido
+    if (currentIndex < 0) {
+        currentIndex = totalItems - 1;
+    } else if (currentIndex >= totalItems) {
+        currentIndex = 0;
+    }
+
+    // Actualizar la posición del carrusel
+    const carousel = document.querySelector('.carousel');
+    carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
+}
+
 // Desplazamiento suave entre secciones
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
