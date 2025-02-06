@@ -16,6 +16,11 @@ body {
     overflow-x: hidden; /* Evitar scroll horizontal */
 }
 
+h1, h2{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 /* Barra de Navegación */
 .navbar {
     display: flex;
@@ -68,6 +73,11 @@ body {
 #inicio {
     background: linear-gradient(135deg, #ff7f50, #ff6347);
     color: white;
+    .btn-about{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.5rem;
+        width: 15em;
+    }
 }
 
 #acerca-de {
@@ -85,7 +95,7 @@ body {
 }
 
 #proyectos {
-    background: linear-gradient(135deg, #98fb98, #3cb371);
+    background: linear-gradient(135deg, #2b6b2b, #2bca73);
     color: white;
 }
 
@@ -97,6 +107,11 @@ body {
 #contacto {
     background: linear-gradient(135deg, #ffa07a, #ff4500);
     color: white;
+    .btn-about{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.5rem;
+        width: 15em;
+    }
 }
 
 .section h1, .section h2 {
@@ -174,13 +189,18 @@ body {
 
 
 /* Contenedor del Carrusel */
-/* .carousel-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+.carousel-container {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: fit-content;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 8px;
     overflow: hidden;
+    /* position: relative;
+    max-width: 800px;
+    */
 }
-
+/*
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
