@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2b2828;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    width: 20vw;
+    flex-shrink: 0;
+    transition: all 0.3s ease-in-out;
+    ul{
+        list-style: none;
+        padding-top: 2em;
+        li{
+            margin: 1em 0;
+            font-size: larger;
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+a:hover{
+    color: #ad2121;
+    transition: all 0.3s ease-in-out;
+}
+
+section {
+    display: flex;
+    flex: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+#inicio {
+    height: 100vh;
+    width: 80vw;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    margin-left: 20vw;
+    flex-direction: column;
+    background-color: blueviolet;
+}
+
+#productos {
+    height: 100vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(109, 59, 156);
+}
+
+#contacto {
+    height: 100vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(36, 55, 165);
+}
