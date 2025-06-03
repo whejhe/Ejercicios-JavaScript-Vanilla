@@ -1,0 +1,648 @@
+/* Importamos las variables. */
+@import url('./css/variables.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: var(--font-family);
+}
+
+canvas {
+    background-color: black;
+    image-rendering: pixelated;
+    border: 2px solid #333;
+}
+
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./sprites/background.png') center center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    font-family: var(--font-family);
+    text-align: center;
+    padding: 20px;
+}
+
+#start-screen::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+#start-screen h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    text-shadow: 4px 4px 3px black;
+}
+
+#start-button {
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#start-screen h1,
+#start-screen button {
+    position: relative;
+    z-index: 2;
+}
+
+#start-button:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  color: var(--color-primary);
+  font-size: 32px;
+  font-family: var(--font-family);
+}
+
+#loading-gif {
+  width: 150px;
+  height: 150px;
+}
+
+#ui-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    width: 100%;
+}
+
+#resources-container {
+    display: flex;
+    gap: 5px;
+}
+
+.ui-option {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.ui-map {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#woodValue,
+#stoneValue {
+    flex: 1;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#fullScreenButton:hover,
+#mapaMundi:hover,
+#muteButton:hover,
+#wiki:hover {
+    cursor: pointer;
+    border: 2px solid var(--color-primary);
+}
+
+
+#quiz-container,
+#dialog-container,
+#tutorialModal1,
+#tutorialModal2,
+#tutorialModal3 {
+    position: absolute;
+    bottom: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+}
+
+#tutorialModal1 h2,
+#tutorialModal2 h2,
+#tutorialModal3 h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#tutorialModal1 p,
+#tutorialModal2 p,
+#tutorialModal3 p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tutorialModal1 button,
+#tutorialModal2 button,
+#tutorialModal3 button {
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    background-color: white;
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+#question,
+#dialog {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#answers-container,
+#dialog-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.answer,
+.dialog-button {
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    background-color: white;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.answer:hover,
+.dialog-button:hover {
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+
+#virtual-controller {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    margin: 15px auto;
+}
+
+/* Ocultar el mando virtual en pantallas más grandes */
+@media (min-width: 768px) {
+    #virtual-controller {
+        display: none;
+    }
+}
+
+/* Mostrar el mando virtual en dispositivos móviles */
+@media (max-width: 767px),
+(any-pointer: coarse) {
+    #virtual-controller {
+        display: flex;
+    }
+}
+
+
+#virtual-controller .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+#virtual-controller .button {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(48, 44, 44, 0.7);
+    border-radius: 50%;
+    /* border: 1px solid #999; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#virtual-controller .button img {
+    width: 30px;
+    height: 30px;
+}
+
+#virtual-controller .button.up {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 10px;
+}
+
+#virtual-controller .button.down {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 10px;
+}
+
+#virtual-controller .button.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#virtual-controller .space{
+    grid-column: 2;
+    grid-row:2;
+}
+
+#virtual-controller .button.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#virtual-controller .button.action {
+    /* background-color: lightblue; */
+}
+
+.container-controllers .relative{
+    position: relative;
+}
+
+/* Ocultar el mando virtual en pantallas más grandes */
+@media (min-width: 768px) {
+    #virtual-controller {
+        display: none;
+    }
+}
+
+/* Mostrar el mando virtual en dispositivos móviles */
+@media (max-width: 767px),
+(any-pointer: coarse) {
+    #virtual-controller {
+        display: flex;
+    }
+}
+
+
+#virtual-controller .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+#virtual-controller .button {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(48, 44, 44, 0.7);
+    border-radius: 50%;
+    /* border: 1px solid #999; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#virtual-controller .button img {
+    width: 30px;
+    height: 30px;
+}
+
+#virtual-controller .button.up {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 10px;
+}
+
+#virtual-controller .button.down {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 10px;
+}
+
+#virtual-controller .button.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#virtual-controller .space{
+    grid-column: 2;
+    grid-row:2;
+}
+
+#virtual-controller .button.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#virtual-controller .button.action {
+    /* background-color: lightblue; */
+}
+
+/* Contenedor principal del mapa mundi */
+#mapaMundi-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fffacdb5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    z-index: 10;
+}
+
+/* Encabezado del mapa mundi */
+#mapaMundi-header h1 {
+    font-size: 60px;
+    text-align: center;
+    flex: 1;
+    color: #005481;
+    padding: 30px;
+}
+
+#backButton {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+/* Contenedor de los mapas (grid) */
+#mapaMundi-maps {
+    padding-top: 40px;
+    display: grid;
+    gap: 60px;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    /* mapas por encima de las líneas */
+}
+
+/* Estilo de cada mapa */
+.mapaMundi-map {
+    position: relative;
+    width: 160px;
+    height: 100px;
+    background-color: #0077a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 84, 129, 0.5);
+    color: white;
+}
+
+/* Nombre del mapa encima del rectángulo */
+.mapaMundi-map::before {
+    content: attr(data-name);
+    position: absolute;
+    top: -25px;
+    left: 25%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #005481;
+    font-weight: bold;
+}
+
+/* Contenedor para las líneas entre mapas */
+#mapaMundi-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Líneas de conexión entre los mapas */
+.connection-line {
+    position: absolute;
+    height: 4px;
+    background-color: #005481;
+    transform-origin: 0 0;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.mapaMundi-map img.mapaMundi-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.mapaMundi-map--current {
+    outline: 4px solid var(--color-secondary);
+    outline-offset: -2px;
+    z-index: 1;
+}
+
+
+/* WIKI */
+
+#wiki-container .modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semi-transparente */
+}
+
+/* Modal Content/Box */
+#wiki-container .modal-content {
+    background-color: #005481;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: 20px;
+    border: 2px solid var(--color-primary);
+    /* Borde primario */
+    border-radius: 15px;
+    /* Borde redondeado */
+    width: 90%;
+    height: 90%;
+    font-family: var(--font-family);
+    /* Fuente del juego */
+    color: white;
+    /* Color del texto */
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--color-primary);
+    /* Color primario */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-secondary);
+    /* Color secundario al pasar el ratón */
+    text-decoration: none;
+}
+
+#wikiContent {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 1.5em;
+    line-height: 1.6;
+    height: calc(100% - 60px);
+    /* Ajuste para el espacio del título */
+    position: relative;
+}
+
+.modal-content .title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--color-primary);
+    font-family: var(--font-family);
+    /* Color primario */
+}
+
+#wikiContent h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+    /* Color primario */
+}
+
+#wikiContent ul {
+    margin-left: 20px;
+}
+
+#wikiContent li {
+    margin-bottom: 5px;
+}
+
+#wikiContent li .resaltar {
+    color: var(--color-primary);
+}
+
+
+.questions-container {
+    flex: 2; /* Las preguntas ocupan el espacio restante */
+    overflow-y: auto;
+    padding-right: 15px; /* Espacio para que no se peguen a la imagen */
+}
+
+.questions-container li{
+    border: 2px solid var(--color-primary);
+    padding: 0.5em;
+    border-radius: 8px;
+    list-style: none;
+    background: #1b1b1bab;
+}
+
+html .questions-container{
+  scrollbar-width: thin;              /* "auto" | "thin" | "none" */
+  scrollbar-color: #ecd927 transparent; /* color del thumb y del track */
+}
+
+
+
+/* Aplica a toda la web */
+.questions-container::-webkit-scrollbar {
+  width: 6px; /* Ancho de la barra vertical */
+  height: 6px; /* Alto de la barra horizontal */
+}
+
+.questions-container::-webkit-scrollbar-track {
+  background: transparent; /* Fondo del track */
+}
+
+.questions-container::-webkit-scrollbar-thumb {
+  background-color: #ecd927; /* Color del scroll */
+  border-radius: 10px;       /* Bordes redondeados */
+  border: 2px solid transparent; /* Para efecto de separación */
+  background-clip: content-box;  /* Para que no tape el borde */
+}
+
+
+.sabio-wiki {
+    height: auto;
+    max-height: 95vh;
+    width: 22%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 1em;
+    align-self: flex-start;
+}
+
+
+/* FINAL WIKI */

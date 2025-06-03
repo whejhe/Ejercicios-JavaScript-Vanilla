@@ -1,0 +1,12 @@
+/* Importamos las variables. */
+@import url('./css/reset.css');
+@import url('../../../assets/css/variables.css');
+@import url('./css/layout.css');
+
+@import url('./css/componentes/start-screen.css');
+@import url('./css/componentes/wiki.css');
+@import url('./css/componentes/tutorial-info.css');
+@import url('./css/componentes/virtual-controller.css');
+@import url('./css/componentes/mapaMundi.css');
+@import url('./css/componentes/ui-container.css');
+@import url('./css/componentes/dialog-and-cuestions.css');

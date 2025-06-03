@@ -1,0 +1,45 @@
+/* tutorial.css */
+@import url('../../../../../assets/css/variables.css');
+
+#tutorialModal1,
+#tutorialModal2,
+#tutorialModal3 {
+    position: absolute;
+    bottom: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+}
+
+#tutorialModal1 h2,
+#tutorialModal2 h2,
+#tutorialModal3 h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#tutorialModal1 p,
+#tutorialModal2 p,
+#tutorialModal3 p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tutorialModal1 button,
+#tutorialModal2 button,
+#tutorialModal3 button {
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    background-color: white;
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 15px;
+}
